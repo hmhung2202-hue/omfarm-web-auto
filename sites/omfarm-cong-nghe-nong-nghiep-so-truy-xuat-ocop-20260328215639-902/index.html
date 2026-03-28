@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMFARM - Công nghệ Nông nghiệp Số & Truy xuất OCOP</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50; /* Nông nghiệp - Xanh lá */
+            --secondary-color: #2196F3; /* Công nghệ - Xanh dương */
+            --accent-color: #FFC107; /* Điểm nhấn - Vàng */
+            --text-dark: #333;
+            --text-light: #fff;
+            --bg-light: #f8f8f8;
+            --bg-white: #fff;
+            --border-color: #ddd;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1600x800/4CAF50/FFFFFF?text=Hinh+anh+Nong+nghiep+thong+minh') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 150px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #FFDA6B; /* Lighter accent */
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--bg-light);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        .about-content div {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-item h3 {
+            color: var(--secondary-color);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .contact-info strong {
+            color: var(--primary-color);
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100%;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #5cb85c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links li {
+            margin: 0 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide nav links on small screens */
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+            .about-content div {
+                min-width: unset;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">OMFARM</a>
+                <ul class="nav-links">
+                    <li><a href="#hero">Trang chủ</a></li>
+                    <li><a href="#about">Về chúng tôi</a></li>
+                    <li><a href="#services">Giải pháp</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>OMFARM: Nâng tầm nông nghiệp Việt với công nghệ số</h1>
+            <p>Giải pháp toàn diện cho nông nghiệp thông minh và truy xuất nguồn gốc OCOP, mang lại giá trị bền vững.</p>
+            <a href="#contact" class="btn">Liên hệ tư vấn ngay</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Về OMFARM</h2>
+            <div class="about-content">
+                <div>
+                    <p>OMFARM là công ty công nghệ nông nghiệp số tiên phong tại Việt Nam, chuyên cung cấp các giải pháp đổi mới nhằm tối ưu hóa quy trình sản xuất, nâng cao chất lượng nông sản và tăng cường hiệu quả kinh tế cho bà con nông dân và doanh nghiệp.</p>
+                    <p>Chúng tôi tin rằng công nghệ là chìa khóa để mở ra một tương lai nông nghiệp bền vững, minh bạch và thịnh vượng. Với đội ngũ chuyên gia giàu kinh nghiệm và sự am hiểu sâu sắc về nông nghiệp, OMFARM cam kết mang đến những giải pháp thiết thực và hiệu quả nhất.</p>
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/600x400/2196F3/FFFFFF?text=OMFARM+Ve+chung+toi" alt="Về OMFARM">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Giải pháp của chúng tôi</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Nền tảng Quản lý Nông trại Thông minh</h3>
+                    <p>Ứng dụng IoT, AI và Big Data để theo dõi môi trường, quản lý cây trồng, vật nuôi, tối ưu hóa tài nguyên và dự đoán sản lượng, giúp ra quyết định chính xác.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Hệ thống Truy xuất Nguồn gốc OCOP</h3>
+                    <p>Giải pháp toàn diện cho các sản phẩm OCOP, đảm bảo tính minh bạch, rõ ràng từ khâu sản xuất đến tay người tiêu dùng, tăng cường uy tín thương hiệu.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Tư vấn &amp; Triển khai Công nghệ Nông nghiệp</h3>
+                    <p>OMFARM cung cấp dịch vụ tư vấn chuyên sâu và hỗ trợ triển khai các giải pháp công nghệ hiện đại, phù hợp với từng quy mô và loại hình nông nghiệp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Liên hệ với chúng tôi</h2>
+            <p>Bạn cần tư vấn về lĩnh vực gì? Hãy để OMFARM giúp bạn!</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><strong>Điện thoại:</strong> <a href="tel:0971504495">0971504495</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@omfarm.com">info@omfarm.com</a></p>
+                    <p><strong>Địa chỉ:</strong> 123 Đường Công Nghệ, Quận Nông Nghiệp, TP.HCM</p>
+                    <p>Chúng tôi luôn sẵn sàng lắng nghe và cung cấp những giải pháp tối ưu nhất cho quý khách hàng.</p>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="Họ và Tên của bạn" required>
+                        <input type="email" name="email" placeholder="Email của bạn" required>
+                        <input type="tel" name="phone" placeholder="Số điện thoại của bạn" value="0971504495">
+                        <textarea name="message" placeholder="Bạn muốn tư vấn về điều gì?" required></textarea>
+                        <button type="submit">Gửi yêu cầu tư vấn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#hero">Trang chủ</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+                <li><a href="#services">Giải pháp</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <p>&copy; 2023 OMFARM. Tất cả các quyền được bảo lưu.</p>
+        </div>
+    </footer>
+</body>
+</html>
