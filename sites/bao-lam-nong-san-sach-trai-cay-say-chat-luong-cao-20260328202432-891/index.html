@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BẢO LÂM - Nông Sản Sạch & Trái Cây Sấy Chất Lượng Cao</title>
+    <style>
+        /* General Styles & Reset */
+        :root {
+            --primary-green: #4CAF50;
+            --accent-orange: #FF9800;
+            --dark-text: #333;
+            --light-text: #f9f9f9;
+            --background-light: #f9f9f9;
+            --background-white: #ffffff;
+            --shadow-light: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--background-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--dark-text);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: var(--light-text);
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-green);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: var(--primary-green);
+        }
+
+        p {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .btn:hover {
+            background-color: #e68a00; /* Slightly darker orange */
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x800/4CAF50/FFFFFF?text=Anh+nong+san+sach+Bao+Lam') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 60vh; /* Minimum height for hero */
+        }
+
+        .hero h1 {
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--background-white);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px var(--shadow-light);
+            margin-bottom: 30px;
+        }
+
+        .about-section p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 60px 20px;
+            background-color: var(--background-light);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-item {
+            background-color: var(--background-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px var(--shadow-light);
+            text-align: center;
+            padding-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .product-item h3 {
+            margin-bottom: 10px;
+            padding: 0 15px;
+        }
+
+        .product-item p {
+            font-size: 0.95em;
+            color: #555;
+            padding: 0 15px;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--primary-green);
+            color: var(--light-text);
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-section h2 {
+            color: var(--light-text);
+        }
+
+        .contact-section h2::after {
+            background-color: var(--accent-orange);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+
+        .contact-info a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-orange);
+        }
+
+        .contact-info p {
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #222;
+            color: var(--background-light);
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 15px;
+                min-height: 50vh;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-section, .products-section, .contact-section {
+                padding: 40px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>BẢO LÂM</h1>
+            <p>Nông Sản Sạch, Tinh Hoa Từ Đất Lành - Trái Cây Sấy Thơm Ngon, Dinh Dưỡng</p>
+            <a href="#products" class="btn">Xem Sản Phẩm Ngay</a>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>Về BẢO LÂM</h2>
+            <p>BẢO LÂM tự hào là nhà cung cấp nông sản sạch và trái cây sấy chất lượng cao, mang đến những sản phẩm an toàn, bổ dưỡng được tuyển chọn kỹ lưỡng từ những vùng đất trù phú. Với tâm huyết và sự tỉ mỉ, chúng tôi cam kết mỗi sản phẩm đến tay người tiêu dùng đều giữ trọn hương vị tự nhiên và giá trị dinh dưỡng.</p>
+            <p>Chúng tôi không ngừng tìm kiếm và áp dụng các phương pháp canh tác bền vững, nói không với hóa chất độc hại, để đảm bảo sức khỏe cộng đồng và bảo vệ môi trường. BẢO LÂM - Chọn lựa của sức khỏe và sự tin cậy.</p>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2>Sản Phẩm Nổi Bật</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/400x200/FF9800/FFFFFF?text=Xoai+Say" alt="Xoài Sấy Dẻo">
+                    <h3>Xoài Sấy Dẻo</h3>
+                    <p>Những lát xoài tươi ngon được sấy dẻo tự nhiên, giữ trọn vị ngọt thanh và hương thơm đặc trưng của xoài chín. Món ăn vặt bổ dưỡng, tiện lợi.</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/400x200/4CAF50/FFFFFF?text=Chuoi+Say" alt="Chuối Sấy Giòn">
+                    <h3>Chuối Sấy Giòn</h3>
+                    <p>Chuối tươi được sấy giòn tan, không thêm đường, giữ nguyên vị ngọt tự nhiên và cung cấp năng lượng tức thì. Phù hợp cho mọi lứa tuổi.</p>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/400x200/F44336/FFFFFF?text=Dau+Tay+Say" alt="Dâu Tây Sấy">
+                    <h3>Dâu Tây Sấy</h3>
+                    <p>Dâu tây mọng nước được sấy khô, giữ lại vị chua ngọt hài hòa và dưỡng chất. Món quà vặt lý tưởng cho những người yêu thích trái cây.</p>
+                </div>
+                 <div class="product-item">
+                    <img src="https://via.placeholder.com/400x200/2196F3/FFFFFF?text=Thanh+Long+Say" alt="Thanh Long Sấy">
+                    <h3>Thanh Long Sấy</h3>
+                    <p>Thanh long tươi được sấy khô, giữ nguyên màu sắc bắt mắt và vị ngọt dịu nhẹ. Giúp bổ sung vitamin và khoáng chất.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Liên Hệ Với Chúng Tôi</h2>
+            <p>Hãy để BẢO LÂM mang đến cho bạn những sản phẩm nông sản sạch và trái cây sấy tốt nhất. Chúng tôi luôn sẵn lòng lắng nghe và phục vụ!</p>
+            <div class="contact-info">
+                <p><strong>Điện thoại:</strong> <a href="tel:0917183633">0917183633</a></p>
+                <p><strong>Email:</strong> <a href="mailto:test@gmail.com">test@gmail.com</a></p>
+            </div>
+            <a href="mailto:test@gmail.com" class="btn" style="margin-top: 30px;">Gửi Email Ngay</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 BẢO LÂM. Tất cả bản quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
