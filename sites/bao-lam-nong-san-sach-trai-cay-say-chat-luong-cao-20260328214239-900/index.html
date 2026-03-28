@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BẢO LÂM - Nông Sản Sạch | Trái Cây Sấy Chất Lượng Cao</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fcf8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        h2 {
+            font-size: 2.2em;
+            color: #4CAF50;
+        }
+        h3 {
+            font-size: 1.8em;
+            color: #66BB6A;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .btn:hover {
+            background-color: #66BB6A;
+            text-decoration: none;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x800/66BB6A/ffffff?text=Nong+San+Sach') center/cover no-repeat; /* Placeholder image */
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+        }
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        section:nth-child(even) {
+            background-color: #e8f5e9; /* Light green background for alternate sections */
+        }
+        section p {
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            text-align: left;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 250px;
+            max-width: 400px;
+        }
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .product-card-content {
+            padding: 20px;
+        }
+        .product-card h3 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #4CAF50;
+            font-size: 1.5em;
+        }
+        .product-card p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .contact-item {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        .contact-item strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #4CAF50;
+        }
+        .contact-item p {
+            margin: 0;
+            color: #555;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .contact-form .btn {
+            width: auto;
+            padding: 12px 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9em;
+        }
+        footer p {
+            margin: 0;
+        }
+        footer a {
+            color: #66BB6A;
+            margin: 0 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .about-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .about-text, .about-image {
+                min-width: unset;
+                max-width: 100%;
+            }
+            .product-card {
+                margin-bottom: 20px;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .contact-item {
+                max-width: 100%;
+            }
+            .contact-form {
+                padding: 20px;
+            }
+            .contact-form input[type="text"],
+            .contact-form input[type="email"],
+            .contact-form textarea {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>BẢO LÂM</h1>
+            <p>Nông Sản Sạch Từ Tâm | Trái Cây Sấy Tinh Hoa Thiên Nhiên</p>
+            <a href="#products" class="btn">Khám Phá Sản Phẩm</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>Về BẢO LÂM</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>BẢO LÂM tự hào là đơn vị cung cấp nông sản sạch và trái cây sấy chất lượng cao, mang đến những sản phẩm tinh túy từ thiên nhiên đến bàn ăn của mọi gia đình. Chúng tôi cam kết về nguồn gốc rõ ràng, quy trình sản xuất an toàn, không sử dụng hóa chất độc hại hay chất bảo quản.</p>
+                        <p>Với tâm huyết và sự cẩn trọng trong từng khâu, từ việc chọn lựa nguyên liệu tươi ngon nhất đến công nghệ sấy hiện đại, BẢO LÂM đảm bảo giữ trọn hương vị tự nhiên và giá trị dinh dưỡng của từng loại trái cây. Hãy cùng BẢO LÂM trải nghiệm hương vị đích thực của nông sản Việt Nam!</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://via.placeholder.com/400x300/F5F5DC/4CAF50?text=Nong+San+Sach" alt="Nông sản sạch Bảo Lâm">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <h2>Sản Phẩm Nổi Bật</h2>
+                <p>Khám phá bộ sưu tập trái cây sấy thơm ngon, dinh dưỡng của BẢO LÂM – món quà tuyệt vời từ thiên nhiên.</p>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/300x200/FFD700/8B4513?text=Xoai+Say" alt="Xoài sấy dẻo">
+                        <div class="product-card-content">
+                            <h3>Xoài Sấy Dẻo</h3>
+                            <p>Từng miếng xoài vàng ươm, dẻo ngọt tự nhiên, giữ trọn hương vị của xoài tươi chín mọng.</p>
+                            <a href="#" class="btn">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/300x200/FFBF00/8B4513?text=Chuoi+Say" alt="Chuối sấy giòn">
+                        <div class="product-card-content">
+                            <h3>Chuối Sấy Giòn</h3>
+                            <p>Chuối sấy giòn tan, vị ngọt thanh, béo ngậy, là món ăn vặt lý tưởng cho mọi lứa tuổi.</p>
+                            <a href="#" class="btn">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/300x200/FF4500/8B4513?text=Mit+Say" alt="Mít sấy giòn">
+                        <div class="product-card-content">
+                            <h3>Mít Sấy Giòn</h3>
+                            <p>Mít sấy giữ nguyên mùi thơm đặc trưng, giòn rụm, mang đến trải nghiệm hương vị độc đáo.</p>
+                            <a href="#" class="btn">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                     <div class="product-card">
+                        <img src="https://via.placeholder.com/300x200/FFC0CB/8B4513?text=Thanh+Long+Say" alt="Thanh long sấy">
+                        <div class="product-card-content">
+                            <h3>Thanh Long Sấy</h3>
+                            <p>Thanh long sấy giữ màu sắc đẹp mắt và vị ngọt dịu, giàu vitamin và khoáng chất.</p>
+                            <a href="#" class="btn">Xem Chi Tiết</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Liên Hệ Với Chúng Tôi</h2>
+                <p>Mọi thắc mắc, yêu cầu tư vấn hoặc đặt hàng, xin vui lòng liên hệ BẢO LÂM qua các kênh dưới đây.</p>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Điện thoại</strong>
+                        <p>0917183633</p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email</strong>
+                        <p><a href="mailto:test@gmail.com">test@gmail.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Địa chỉ</strong>
+                        <p>Vui lòng liên hệ để biết chi tiết địa chỉ kho/văn phòng.</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Gửi tin nhắn cho BẢO LÂM</h3>
+                    <form action="#" method="POST">
+                        <label for="name">Họ và tên:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Nội dung:</label>
+                        <textarea id="message" name="message" required></textarea>
+
+                        <button type="submit" class="btn">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 BẢO LÂM. All rights reserved.</p>
+            <p>Nông Sản Sạch | Trái Cây Sấy Chất Lượng Cao</p>
+        </div>
+    </footer>
+</body>
+</html>
