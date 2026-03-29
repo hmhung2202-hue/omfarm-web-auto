@@ -1,0 +1,67 @@
+{
+  "site_name": "Công Ty ABC - Giải Pháp Toàn Diện Cho Doanh Nghiệp",
+  "slug": "cong-ty-abc-giai-phap-toan-dien-cho-doanh-nghiep-20260329104447-953",
+  "title": "Công Ty ABC - Giải Pháp Toàn Diện Cho Doanh Nghiệp",
+  "summary": "Landing page hiện đại, chuyên nghiệp cho Công Ty ABC, cung cấp giải pháp toàn diện, bám sát cấu trúc ảnh mẫu với các phần giới thiệu, dịch vụ và liên hệ.",
+  "company": {
+    "name": "Công Ty ABC - Giải Pháp Toàn Diện Cho Doanh Nghiệp",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Công Ty ABC - Giải Pháp Toàn Diện Cho Doanh Nghiệp",
+    "subtitle": "Landing page hiện đại, chuyên nghiệp cho Công Ty ABC, cung cấp giải pháp toàn diện, bám sát cấu trúc ảnh mẫu với các phần giới thiệu, dịch vụ và liên hệ.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Landing page hiện đại, chuyên nghiệp cho Công Ty ABC, cung cấp giải pháp toàn diện, bám sát cấu trúc ảnh mẫu với các phần giới thiệu, dịch vụ và liên hệ.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    }
+  ]
+}
