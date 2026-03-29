@@ -1,0 +1,72 @@
+{
+  "site_name": "Trang Web Doanh Nghiệp Chuyên Nghiệp",
+  "slug": "trang-web-doanh-nghiep-chuyen-nghiep-20260329121108-967",
+  "title": "Trang Web Doanh Nghiệp Chuyên Nghiệp",
+  "summary": "Landing page mẫu cho doanh nghiệp với cấu trúc hiện đại, bao gồm các phần giới thiệu, dịch vụ, và liên hệ, được thiết kế responsive và sẵn sàng cho việc cập nhật nội dung.",
+  "company": {
+    "name": "Trang Web Doanh Nghiệp Chuyên Nghiệp",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Trang Web Doanh Nghiệp Chuyên Nghiệp",
+    "subtitle": "Landing page mẫu cho doanh nghiệp với cấu trúc hiện đại, bao gồm các phần giới thiệu, dịch vụ, và liên hệ, được thiết kế responsive và sẵn sàng cho việc cập nhật nội dung.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Landing page mẫu cho doanh nghiệp với cấu trúc hiện đại, bao gồm các phần giới thiệu, dịch vụ, và liên hệ, được thiết kế responsive và sẵn sàng cho việc cập nhật nội dung.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": "",
+    "A7": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A7",
+      "value": ""
+    }
+  ]
+}
