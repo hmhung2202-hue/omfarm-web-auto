@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-edit="page_title">Bình Minh - Dược Liệu Tự Nhiên & Chất Lượng</title>
+    <style>
+        :root {
+            --primary-color: #388E3C; /* Green */
+            --secondary-color: #5C6246; /* Olive Green */
+            --accent-color: #FFB300; /* Amber */
+            --text-color: #333333;
+            --light-text-color: #f8f8f8;
+            --background-light: #F9FBE7; /* Light Yellowish Green */
+            --background-dark: #2E3B2D; /* Dark Green */
+            --footer-bg: #212121;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu ul li {
+            margin-left: 30px;
+        }
+
+        .nav-menu ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text-color);
+            overflow: hidden;
+            background-color: var(--background-dark);
+        }
+
+        .hero-background-placeholder {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #5C6246;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #FFD54F; /* Lighter Amber */
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section:nth-child(odd) {
+            background-color: var(--background-light);
+        }
+
+        .section:nth-child(even) {
+            background-color: #E8F5E9; /* Lighter Green background */
+        }
+
+        .section-title {
+            font-size: 3em;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .about-image-placeholder {
+            flex: 1;
+            min-width: 300px;
+            height: 350px;
+            background-color: #c8e6c9; /* Placeholder color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            font-size: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Products Section */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card-image-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #E6EE9C; /* Light green yellow */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+
+        .product-card-content {
+            padding: 25px;
+        }
+
+        .product-card-content h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .product-card-content p {
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .benefit-icon-placeholder {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: var(--text-color);
+        }
+
+        .benefit-item h4 {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .benefit-item p {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section-background-placeholder {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--secondary-color);
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 18px 40px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #FFD54F;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        .contact-info, .contact-form-placeholder, .contact-map-placeholder {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .contact-info h3 {
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .contact-info p strong {
+            color: var(--primary-color);
+        }
+
+        .contact-map-placeholder {
+            height: 300px;
+            background-color: #DCE775; /* Light Lime Green */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--text-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--footer-bg);
+            color: var(--light-text-color);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-links ul li a {
+            color: var(--light-text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+            }
+
+            .nav-menu ul {
+                margin-top: 15px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-menu ul li {
+                margin-left: 0;
+            }
+
+            .hero {
+                height: 450px;
+            }
+
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .section-title {
+                font-size: 2.5em;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image-placeholder, .about-text {
+                min-width: unset;
+                width: 100%;
+            }
+
+            .product-grid, .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 2.5em;
+            }
+
+            .cta-section p {
+                font-size: 1em;
+            }
+
+            .contact-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .btn, .cta-btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo" data-edit="company_name">Bình Minh</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#hero">Trang chủ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#products">Sản phẩm</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-background-placeholder" id="img-A1" data-image-slot="A1">
+            Ảnh cần cập nhật (A1): Phong cảnh bình minh hoặc vườn dược liệu
+        </div>
+        <div class="hero-content">
+            <h1 data-edit="hero_title">Dược Liệu Bình Minh</h1>
+            <p data-edit="hero_subtitle">Nguồn Dược Liệu Tươi Sạch, Chất Lượng Từ Vùng Đất Thần Dược</p>
+            <a href="#products" class="btn" data-edit="hero_cta">Khám phá Sản phẩm của chúng tôi</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="about_section_title">Về Bình Minh</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 data-edit="about_heading">Chăm sóc sức khỏe từ tinh hoa đất trời</h3>
+                    <p data-edit="about_paragraph_1">Tại <strong data-edit="company_name_about">Bình Minh</strong>, chúng tôi tự hào là đơn vị tiên phong trong việc trồng trọt, thu mua và phân phối các loại dược liệu quý hiếm, mang đến những sản phẩm chất lượng cao nhất cho sức khỏe cộng đồng. Với triết lý kinh doanh đặt chữ 'Tâm' lên hàng đầu, chúng tôi cam kết mỗi sản phẩm đều được chăm sóc kỹ lưỡng từ khâu gieo hạt đến thu hoạch, đảm bảo giữ trọn vẹn tinh chất thiên nhiên.</p>
+                    <p data-edit="about_paragraph_2">Chúng tôi không ngừng nghiên cứu và ứng dụng các phương pháp canh tác bền vững, thân thiện với môi trường, đồng thời hỗ trợ bà con nông dân phát triển kinh tế thông qua mô hình liên kết sản xuất dược liệu sạch. Hãy cùng <strong data-edit="company_name_about_2">Bình Minh</strong> khám phá sức mạnh tiềm ẩn của tự nhiên.</p>
+                </div>
+                <div class="about-image-placeholder" id="img-A2" data-image-slot="A2">
+                    Ảnh cần cập nhật (A2): Đội ngũ, cánh đồng dược liệu hoặc quy trình sản xuất
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="products_section_title">Sản Phẩm Dược Liệu</h2>
+            <p data-edit="products_subtitle">Khám phá bộ sưu tập dược liệu tươi và khô của chúng tôi, được tuyển chọn kỹ lưỡng và đảm bảo chất lượng.</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-card-image-placeholder" id="img-A3" data-image-slot="A3">
+                        Ảnh cần cập nhật (A3): Dược liệu Sa Nhân
+                    </div>
+                    <div class="product-card-content">
+                        <h3 data-edit="product_1_name">Sa Nhân</h3>
+                        <p data-edit="product_1_description">Dược liệu quý giúp kiện tỳ, hành khí, ôn trung, an thai. Sa Nhân của Bình Minh được thu hoạch đúng mùa, giữ trọn hương vị và dược tính.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-image-placeholder" id="img-A4" data-image-slot="A4">
+                        Ảnh cần cập nhật (A4): Dược liệu Cam Thảo
+                    </div>
+                    <div class="product-card-content">
+                        <h3 data-edit="product_2_name">Cam Thảo</h3>
+                        <p data-edit="product_2_description">Vị ngọt tự nhiên, có tác dụng bổ tỳ ích khí, thanh nhiệt giải độc, hòa hoãn cấp tính. Sản phẩm cam thảo của chúng tôi đạt chuẩn an toàn vệ sinh thực phẩm.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-image-placeholder" id="img-A5" data-image-slot="A5">
+                        Ảnh cần cập nhật (A5): Dược liệu Cà Gai Leo
+                    </div>
+                    <div class="product-card-content">
+                        <h3 data-edit="product_3_name">Cà Gai Leo</h3>
+                        <p data-edit="product_3_description">Hỗ trợ chức năng gan, giải độc, hạ men gan. Cà gai leo được trồng theo quy trình hữu cơ, đảm bảo dược tính cao nhất.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-image-placeholder" id="img-A6" data-image-slot="A6">
+                        Ảnh cần cập nhật (A6): Dược liệu Hương Nhu
+                    </div>
+                    <div class="product-card-content">
+                        <h3 data-edit="product_4_name">Hương Nhu</h3>
+                        <p data-edit="product_4_description">Thảo dược giúp giải cảm, hạ sốt, ra mồ hôi, và hỗ trợ tiêu hóa. Hương Nhu của Bình Minh tươi sạch, an toàn cho mọi gia đình.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-image-placeholder" id="img-A7" data-image-slot="A7">
+                        Ảnh cần cập nhật (A7): Dược liệu Nhục Thung Dung
+                    </div>
+                    <div class="product-card-content">
+                        <h3 data-edit="product_5_name">Nhục Thung Dung</h3>
+                        <p data-edit="product_5_description">Được mệnh danh là 'nhân sâm sa mạc', giúp bổ thận, ích tinh, tráng dương. Sản phẩm được khai thác và chế biến theo phương pháp truyền thống.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-card-image-placeholder" id="img-A8" data-image-slot="A8">
+                        Ảnh cần cập nhật (A8): Dược liệu Quế
+                    </div>
+                    <div class="product-card-content">
+                        <h3 data-edit="product_6_name">Quế</h3>
+                        <p data-edit="product_6_description">Vị cay ngọt, tính nóng, có tác dụng bổ hỏa trợ dương, tán hàn, hoạt huyết. Quế Bình Minh với hương thơm đặc trưng, chất lượng vượt trội.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="section" style="background-color: var(--background-dark); color: var(--light-text-color);">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--accent-color);" data-edit="benefits_section_title">Tại Sao Chọn Bình Minh?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item" style="background-color: rgba(255,255,255,0.1); color: var(--light-text-color);">
+                    <div class="benefit-icon-placeholder" style="background-color: var(--primary-color); color: var(--light-text-color);" id="img-A9" data-image-slot="A9">
+                        🌱
+                    </div>
+                    <h4 data-edit="benefit_1_title">Nguồn Gốc Rõ Ràng</h4>
+                    <p data-edit="benefit_1_description">Mọi sản phẩm đều có nguồn gốc xuất xứ minh bạch, từ những vùng trồng dược liệu được chứng nhận.</p>
+                </div>
+                <div class="benefit-item" style="background-color: rgba(255,255,255,0.1); color: var(--light-text-color);">
+                    <div class="benefit-icon-placeholder" style="background-color: var(--primary-color); color: var(--light-text-color);" id="img-A10" data-image-slot="A10">
+                        🔬
+                    </div>
+                    <h4 data-edit="benefit_2_title">Kiểm Định Chất Lượng</h4>
+                    <p data-edit="benefit_2_description">Dược liệu được kiểm tra nghiêm ngặt, đảm bảo hàm lượng hoạt chất và an toàn tuyệt đối cho người sử dụng.</p>
+                </div>
+                <div class="benefit-item" style="background-color: rgba(255,255,255,0.1); color: var(--light-text-color);">
+                    <div class="benefit-icon-placeholder" style="background-color: var(--primary-color); color: var(--light-text-color);" id="img-A11" data-image-slot="A11">
+                        🌍
+                    </div>
+                    <h4 data-edit="benefit_3_title">Bền Vững Môi Trường</h4>
+                    <p data-edit="benefit_3_description">Áp dụng phương pháp canh tác hữu cơ, thân thiện với môi trường, góp phần bảo tồn hệ sinh thái.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="cta-section">
+        <div class="cta-section-background-placeholder" id="img-A12" data-image-slot="A12">
+            Ảnh cần cập nhật (A12): Cảnh vườn dược liệu hoặc sản phẩm tươi
+        </div>
+        <div class="cta-content">
+            <h2 data-edit="cta_title">Sẵn Sàng Trải Nghiệm Dược Liệu Chất Lượng?</h2>
+            <p data-edit="cta_subtitle">Liên hệ với chúng tôi ngay hôm nay để nhận tư vấn và báo giá tốt nhất.</p>
+            <a href="#contact" class="cta-btn" data-edit="cta_button_text">Liên hệ với Bình Minh</a>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="contact_section_title">Liên Hệ Với Chúng Tôi</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 data-edit="contact_info_heading">Thông tin liên hệ</h3>
+                    <p><strong>Địa chỉ:</strong> <span data-edit="address">123 Đường Dược Liệu, Xã Bình Minh, Huyện Thảo Dược, Tỉnh Thiên Nhiên</span></p>
+                    <p><strong>Hotline:</strong> <a href="tel:098989999" data-edit="hotline">098989999</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:combua@org.com" data-edit="email">combua@org.com</a></p>
+                    <p><strong>Giờ làm việc:</strong> Thứ 2 - Thứ 7 | 8:00 - 17:00</p>
+                </div>
+                <div class="contact-map-placeholder" id="img-A13" data-image-slot="A13">
+                    Ảnh cần cập nhật (A13): Bản đồ địa điểm
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="footer-logo" data-edit="company_name_footer">Bình Minh</a>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#hero">Trang chủ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#products">Sản phẩm</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </div>
+            <p data-edit="copyright_text">&copy; 2023 Bình Minh. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+<!-- IMAGE SLOT MAP START -->
+A1 - Ảnh Hero, phong cảnh bình minh hoặc vườn dược liệu
+A2 - Ảnh Giới thiệu, đội ngũ, cánh đồng dược liệu hoặc quy trình sản xuất
+A3 - Ảnh sản phẩm Sa Nhân
+A4 - Ảnh sản phẩm Cam Thảo
+A5 - Ảnh sản phẩm Cà Gai Leo
+A6 - Ảnh sản phẩm Hương Nhu
+A7 - Ảnh sản phẩm Nhục Thung Dung
+A8 - Ảnh sản phẩm Quế
+A9 - Icon/ảnh minh họa cho Lợi ích 1 (Nguồn gốc rõ ràng)
+A10 - Icon/ảnh minh họa cho Lợi ích 2 (Kiểm định chất lượng)
+A11 - Icon/ảnh minh họa cho Lợi ích 3 (Bền vững môi trường)
+A12 - Ảnh CTA, cảnh vườn dược liệu hoặc sản phẩm tươi
+A13 - Ảnh Liên hệ, bản đồ địa điểm
+<!-- IMAGE SLOT MAP END -->
+
+</body>
+</html>
