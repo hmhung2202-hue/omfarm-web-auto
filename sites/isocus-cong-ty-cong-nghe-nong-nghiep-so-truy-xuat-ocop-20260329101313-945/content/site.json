@@ -1,0 +1,30 @@
+{
+  "action": "create",
+  "slug": "isocus-cong-ty-cong-nghe-nong-nghiep-so-truy-xuat-ocop-20260329101313-945",
+  "company_key": "isocus-cong-ty-cong-nghe-nong-nghiep-so-truy-xuat-ocop",
+  "title": "Isocus - Công ty Công nghệ Nông nghiệp Số & Truy xuất OCOP",
+  "summary": "Landing page chuyên nghiệp cho Isocus, một công ty công nghệ nông nghiệp số chuyên cung cấp giải pháp và hệ thống truy xuất nguồn gốc OCOP, với đầy đủ thông tin giới thiệu, dịch vụ và liên hệ.",
+  "builder_prompt": "Thiết kế một trang landing page chuyên nghiệp, hiện đại cho công ty công nghệ nông nghiệp số Isocus. Phong cách thiết kế phải sạch sẽ, tinh tế, kết hợp giữa yếu tố công nghệ (màu xanh dương, xám) và nông nghiệp (màu xanh lá cây, trắng). Bố cục tổng thể nên có header cố định, section hero lớn với tiêu đề và CTA rõ ràng, các section giới thiệu, giải pháp/dịch vụ dạng lưới card, section nổi bật hoặc lợi ích, section truy xuất OCOP riêng, và phần liên hệ. Các section nên xen kẽ nền sáng và tối (hoặc ảnh nền). Các card dịch vụ/sản phẩm nên có hình ảnh và mô tả ngắn gọn. Nút CTA phải nổi bật. Website phải responsive tốt trên mọi thiết bị di động. Vui lòng sử dụng các placeholder ảnh theo hệ thống A1, A2, A3... đã được định nghĩa trong HTML, mỗi placeholder phải có viền và chữ mô tả rõ vị trí ảnh.",
+  "source_prompt": ": Isocus | web công ty công nghệ nông nghiệp số | truy xuất OCOP Bạn cần tư vấn về linhx vực gì|0971504495/",
+  "source_mode": "text",
+  "image_count": 0,
+  "repo_owner": "hmhung2202-hue",
+  "repo_name": "omfarm-web-auto",
+  "branch": "main",
+  "public_domain": "omfarmbot.com",
+  "base_path": "sites/isocus-cong-ty-cong-nghe-nong-nghiep-so-truy-xuat-ocop-20260329101313-945",
+  "html_path": "sites/isocus-cong-ty-cong-nghe-nong-nghiep-so-truy-xuat-ocop-20260329101313-945/index.html",
+  "meta_path": "sites/isocus-cong-ty-cong-nghe-nong-nghiep-so-truy-xuat-ocop-20260329101313-945/content/site.json",
+  "admin_data_path": "content/sites/isocus-cong-ty-cong-nghe-nong-nghiep-so-truy-xuat-ocop-20260329101313-945.json",
+  "site_url": "https://omfarmbot.com/sites/isocus-cong-ty-cong-nghe-nong-nghiep-so-truy-xuat-ocop-20260329101313-945/",
+  "github_pages_url": "https://hmhung2202-hue.github.io/omfarm-web-auto/sites/isocus-cong-ty-cong-nghe-nong-nghiep-so-truy-xuat-ocop-20260329101313-945/",
+  "admin_url": "https://omfarmbot.com/admin/",
+  "chat_id": "1962488728",
+  "message_id": "945",
+  "created_at_utc": "2026-03-29T10:13:13.778Z",
+  "updated_at_utc": "2026-03-29T10:13:13.778Z",
+  "image_slots": [
+    "A2",
+    "A3"
+  ]
+}
