@@ -1,0 +1,72 @@
+{
+  "site_name": "Công ty Giải pháp Kỹ thuật số ABC - Chuyển Đổi Số Doanh Nghiệp",
+  "slug": "cong-ty-giai-phap-ky-thuat-so-abc-chuyen-doi-so-doanh-nghiep-20260329110359-0",
+  "title": "Công ty Giải pháp Kỹ thuật số ABC - Chuyển Đổi Số Doanh Nghiệp",
+  "summary": "Landing page chuyên nghiệp cho Công ty Giải pháp Kỹ thuật số ABC, tập trung vào chuyển đổi số và các dịch vụ công nghệ, với thiết kế hiện đại và responsive.",
+  "company": {
+    "name": "Công ty Giải pháp Kỹ thuật số ABC - Chuyển Đổi Số Doanh Nghiệp",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Công ty Giải pháp Kỹ thuật số ABC - Chuyển Đổi Số Doanh Nghiệp",
+    "subtitle": "Landing page chuyên nghiệp cho Công ty Giải pháp Kỹ thuật số ABC, tập trung vào chuyển đổi số và các dịch vụ công nghệ, với thiết kế hiện đại và responsive.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Landing page chuyên nghiệp cho Công ty Giải pháp Kỹ thuật số ABC, tập trung vào chuyển đổi số và các dịch vụ công nghệ, với thiết kế hiện đại và responsive.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": "",
+    "A7": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A7",
+      "value": ""
+    }
+  ]
+}
