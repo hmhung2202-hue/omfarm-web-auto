@@ -1,0 +1,67 @@
+{
+  "site_name": "Công Ty Cổ Phần [Tên Công Ty] - Giải Pháp Doanh Nghiệp Hàng Đầu",
+  "slug": "cong-ty-co-phan-ten-cong-ty-giai-phap-doanh-nghiep-hang-dau-20260329104143-951",
+  "title": "Công Ty Cổ Phần [Tên Công Ty] - Giải Pháp Doanh Nghiệp Hàng Đầu",
+  "summary": "Landing page giới thiệu về Công Ty Cổ Phần [Tên Công Ty], chuyên cung cấp các giải pháp và dịch vụ toàn diện cho doanh nghiệp, nhấn mạnh tầm nhìn, sứ mệnh và cam kết chất lượng.",
+  "company": {
+    "name": "Công Ty Cổ Phần [Tên Công Ty] - Giải Pháp Doanh Nghiệp Hàng Đầu",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Công Ty Cổ Phần [Tên Công Ty] - Giải Pháp Doanh Nghiệp Hàng Đầu",
+    "subtitle": "Landing page giới thiệu về Công Ty Cổ Phần [Tên Công Ty], chuyên cung cấp các giải pháp và dịch vụ toàn diện cho doanh nghiệp, nhấn mạnh tầm nhìn, sứ mệnh và cam kết chất lượng.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Landing page giới thiệu về Công Ty Cổ Phần [Tên Công Ty], chuyên cung cấp các giải pháp và dịch vụ toàn diện cho doanh nghiệp, nhấn mạnh tầm nhìn, sứ mệnh và cam kết chất lượng.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    }
+  ]
+}
