@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách website OMFARM</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    a { display: block; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <h2>Danh sách website</h2>
+  <div id="list"></div>
+
+  <script>
+    fetch('/sites/')
+      .then(res => res.text())
+      .then(html => {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+
+        const links = div.querySelectorAll('a');
+        const list = document.getElementById('list');
+
+        links.forEach(link => {
+          const href = link.getAttribute('href');
+
+          if (href && href !== '../') {
+            const a = document.createElement('a');
+            a.href = href;
+            a.innerText = href;
+            list.appendChild(a);
+          }
+        });
+      })
+      .catch(() => {
+        document.getElementById('list').innerText = 'Không load được danh sách';
+      });
+  </script>
+</body>
+</html>
