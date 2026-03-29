@@ -1,0 +1,92 @@
+{
+  "site_name": "Isocus - Nông nghiệp số & Truy xuất OCOP",
+  "slug": "isocus-nong-nghiep-so-truy-xuat-ocop-20260329103001-948",
+  "title": "Isocus - Nông nghiệp số & Truy xuất OCOP",
+  "summary": "Landing page chuyên nghiệp cho Isocus, công ty công nghệ nông nghiệp số, tập trung vào giải pháp truy xuất nguồn gốc OCOP toàn diện, với thiết kế hiện đại và thân thiện di động.",
+  "company": {
+    "name": "Isocus - Nông nghiệp số & Truy xuất OCOP",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Isocus - Nông nghiệp số & Truy xuất OCOP",
+    "subtitle": "Landing page chuyên nghiệp cho Isocus, công ty công nghệ nông nghiệp số, tập trung vào giải pháp truy xuất nguồn gốc OCOP toàn diện, với thiết kế hiện đại và thân thiện di động.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Landing page chuyên nghiệp cho Isocus, công ty công nghệ nông nghiệp số, tập trung vào giải pháp truy xuất nguồn gốc OCOP toàn diện, với thiết kế hiện đại và thân thiện di động.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": "",
+    "A7": "",
+    "A8": "",
+    "A9": "",
+    "A10": "",
+    "A11": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A7",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A8",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A9",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A10",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A11",
+      "value": ""
+    }
+  ]
+}
