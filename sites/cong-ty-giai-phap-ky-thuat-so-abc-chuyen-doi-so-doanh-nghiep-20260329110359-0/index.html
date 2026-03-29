@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-edit="page_title">Công ty Giải pháp Kỹ thuật số ABC - Chuyển Đổi Số Doanh Nghiệp</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --light-bg: #f8f9fa;
+            --dark-text: #343a40;
+            --white-text: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white-text);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #e9f5ff; /* Lighter blue background */
+            color: var(--dark-text);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        .hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .hero .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white-text);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .hero-image-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            color: var(--white-text);
+            opacity: 0.8;
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: multiply;
+        }
+
+        /* Section General Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--light-bg);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8em;
+            color: var(--dark-text);
+            margin-bottom: 20px;
+        }
+
+        .about-image-placeholder {
+            flex: 1;
+            min-height: 300px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: var(--dark-text);
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white-text);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card-image-placeholder {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            color: var(--white-text);
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            color: var(--dark-text);
+            margin-bottom: 15px;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background-color: var(--primary-color);
+            color: var(--white-text);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-banner h2 {
+            color: var(--white-text);
+            margin-bottom: 40px;
+        }
+
+        .cta-banner .btn-secondary {
+            background-color: var(--white-text);
+            color: var(--primary-color);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-banner .btn-secondary:hover {
+            background-color: #e2e6ea;
+            color: #0056b3;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-info, .contact-form-wrapper {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .contact-info p strong {
+            color: var(--primary-color);
+        }
+
+        .contact-form-wrapper form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: var(--white-text);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-form-wrapper input, .contact-form-wrapper textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .contact-form-wrapper textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form-wrapper .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white-text);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form-wrapper .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            color: var(--dark-text);
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-text);
+            color: var(--white-text);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Hide nav for mobile, could add a hamburger menu */
+            }
+
+            header .container {
+                justify-content: center;
+            }
+
+            .logo {
+                font-size: 1.5em;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 2em;
+                margin-bottom: 40px;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image-placeholder {
+                width: 100%;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .cta-banner h2 {
+                font-size: 1.8em;
+            }
+
+            .contact-info, .contact-form-wrapper {
+                min-width: unset;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 0.9em;
+            }
+
+            .hero .btn-primary {
+                padding: 10px 20px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .service-card {
+                padding: 15px;
+            }
+
+            .cta-banner h2 {
+                font-size: 1.5em;
+            }
+
+            .cta-banner .btn-secondary {
+                padding: 10px 20px;
+            }
+        }
+
+        /* Placeholder Image Styling */
+        .placeholder-image {
+            width: 100%;
+            height: 100%;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.2em;
+            color: #666;
+            border-radius: 8px;
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .placeholder-image span {
+            display: block;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo" data-edit="company_name">ABC Digital Solutions</a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Trang chủ</a></li>
+                    <li><a href="#about">Về chúng tôi</a></li>
+                    <li><a href="#services">Dịch vụ</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-image-placeholder" id="img-A1" data-image-slot="A1">
+            <div class="placeholder-image" style="background-color: rgba(0, 123, 255, 0.2); color: #0056b3;"><span>A1 - Ảnh nền Hero<br>Cần cập nhật</span></div>
+        </div>
+        <div class="container">
+            <h1 data-edit="hero_title">Chuyển Đổi Số Doanh Nghiệp Cùng Chúng Tôi</h1>
+            <p data-edit="hero_subtitle">Cung cấp các giải pháp công nghệ tiên tiến, tối ưu hóa quy trình và nâng cao hiệu quả kinh doanh.</p>
+            <a href="#contact" class="btn-primary" data-edit="hero_cta_button">Bắt Đầu Ngay</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 data-edit="about_section_title">Về Chúng Tôi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 data-edit="about_heading">Công ty Giải pháp Kỹ thuật số ABC</h3>
+                    <p data-edit="about_text">Công ty Giải pháp Kỹ thuật số ABC là đối tác tin cậy trong hành trình chuyển đổi số của bạn. Với đội ngũ chuyên gia giàu kinh nghiệm và sự am hiểu sâu sắc về công nghệ, chúng tôi cam kết mang đến những giải pháp đột phá, giúp doanh nghiệp vượt trội trong kỷ nguyên số. Sứ mệnh của chúng tôi là đồng hành cùng khách hàng, biến thách thức thành cơ hội và kiến tạo giá trị bền vững.</p>
+                    <p data-edit="about_text_more">Chúng tôi luôn nỗ lực nghiên cứu và áp dụng các công nghệ mới nhất để đảm bảo mỗi giải pháp đều hiệu quả, bảo mật và thân thiện với người dùng. ABC Digital Solutions tự hào mang đến sự đổi mới và tăng trưởng cho các doanh nghiệp ở mọi quy mô.</p>
+                </div>
+                <div class="about-image-placeholder" id="img-A2" data-image-slot="A2">
+                    <div class="placeholder-image"><span>A2 - Ảnh giới thiệu công ty<br>Cần cập nhật</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 data-edit="services_section_title">Dịch Vụ Của Chúng Tôi</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-image-placeholder" id="img-A3" data-image-slot="A3">
+                        <div class="placeholder-image" style="background-color: rgba(0, 123, 255, 0.7); color: white;"><span>A3</span></div>
+                    </div>
+                    <h3 data-edit="service_1_title">Phát triển Website & Ứng Dụng</h3>
+                    <p data-edit="service_1_description">Xây dựng website và ứng dụng di động chuyên nghiệp, tùy chỉnh theo yêu cầu, đảm bảo trải nghiệm người dùng tối ưu và hiệu quả kinh doanh vượt trội.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-image-placeholder" id="img-A4" data-image-slot="A4">
+                        <div class="placeholder-image" style="background-color: rgba(0, 123, 255, 0.7); color: white;"><span>A4</span></div>
+                    </div>
+                    <h3 data-edit="service_2_title">Tư vấn & Triển khai CRM/ERP</h3>
+                    <p data-edit="service_2_description">Tối ưu hóa quản lý khách hàng và tài nguyên doanh nghiệp với các hệ thống CRM/ERP hiện đại, giúp tăng cường hiệu suất và đưa ra quyết định thông minh.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-image-placeholder" id="img-A5" data-image-slot="A5">
+                        <div class="placeholder-image" style="background-color: rgba(0, 123, 255, 0.7); color: white;"><span>A5</span></div>
+                    </div>
+                    <h3 data-edit="service_3_title">Marketing Số Toàn Diện</h3>
+                    <p data-edit="service_3_description">Nâng cao nhận diện thương hiệu và tiếp cận khách hàng tiềm năng qua các chiến dịch marketing số hiệu quả, từ SEO, SEM đến Social Media và Email Marketing.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-image-placeholder" id="img-A6" data-image-slot="A6">
+                        <div class="placeholder-image" style="background-color: rgba(0, 123, 255, 0.7); color: white;"><span>A6</span></div>
+                    </div>
+                    <h3 data-edit="service_4_title">Điện toán Đám mây & Bảo mật</h3>
+                    <p data-edit="service_4_description">Đảm bảo an toàn dữ liệu và tối ưu hạ tầng với các giải pháp điện toán đám mây tiên tiến, giúp doanh nghiệp vận hành linh hoạt và bảo mật tuyệt đối.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <h2 data-edit="cta_banner_title">Bắt Đầu Hành Trình Chuyển Đổi Số Của Bạn Ngay Hôm Nay!</h2>
+            <a href="#contact" class="btn-secondary" data-edit="cta_banner_button">Liên Hệ Với Chúng Tôi</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 data-edit="contact_section_title">Liên Hệ</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><strong data-edit="contact_address_label">Địa chỉ:</strong> <span data-edit="address">Tầng 10, Tòa nhà ABC, 123 Đường Công Nghệ, Quận 1, TP. Hồ Chí Minh</span></p>
+                    <p><strong data-edit="contact_phone_label">Hotline:</strong> <a href="tel:0987654321" data-edit="hotline">0987 654 321</a></p>
+                    <p><strong data-edit="contact_email_label">Email:</strong> <a href="mailto:info@giaiphapsoabc.vn" data-edit="email">info@giaiphapsoabc.vn</a></p>
+                    <div class="map-placeholder" id="img-A7" data-image-slot="A7">
+                        <div class="placeholder-image" style="background-color: #e0e0e0; color: #666;"><span>A7 - Bản đồ vị trí<br>Cần cập nhật</span></div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form action="#" method="POST">
+                        <input type="text" placeholder="Tên của bạn" required data-edit="form_name_placeholder">
+                        <input type="email" placeholder="Email của bạn" required data-edit="form_email_placeholder">
+                        <input type="text" placeholder="Số điện thoại (tùy chọn)" data-edit="form_phone_placeholder">
+                        <textarea placeholder="Nội dung tin nhắn" rows="5" required data-edit="form_message_placeholder"></textarea>
+                        <button type="submit" class="btn-primary" data-edit="form_submit_button">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-edit="footer_copyright">&copy; 2023 ABC Digital Solutions. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <!-- IMAGE SLOT MAP START -->
+A1 - Ảnh nền lớn cho phần Hero, tạo cảm giác công nghệ, chuyển đổi số.
+A2 - Ảnh minh họa cho phần Giới thiệu, có thể là hình ảnh đội ngũ, văn phòng hoặc biểu tượng công nghệ.
+A3 - Ảnh/Icon cho Dịch vụ 1: Phát triển Website & Ứng Dụng.
+A4 - Ảnh/Icon cho Dịch vụ 2: Tư vấn & Triển khai CRM/ERP.
+A5 - Ảnh/Icon cho Dịch vụ 3: Marketing Số Toàn Diện.
+A6 - Ảnh/Icon cho Dịch vụ 4: Điện toán Đám mây & Bảo mật.
+A7 - Ảnh bản đồ hoặc hình ảnh minh họa vị trí công ty.
+<!-- IMAGE SLOT MAP END -->
+
+</body>
+</html>
