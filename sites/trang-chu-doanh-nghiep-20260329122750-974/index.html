@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-edit="page_title">Trang Chủ Doanh Nghiệp</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #007bff;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+            --white: #fff;
+            --gray: #6c757d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://via.placeholder.com/1500x800/0056b3/ffffff?text=A1') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section:nth-of-type(even) {
+            background-color: var(--white);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            text-align: left;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .about-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Services/Products Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card-icon-placeholder {
+            width: 80px;
+            height: 80px;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: var(--gray);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info p strong {
+            color: var(--primary-color);
+        }
+
+        .contact-map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                margin-top: 15px;
+                width: 100%;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 15px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section {
+                padding: 50px 0;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo" data-edit="company_name">Tên Doanh Nghiệp</a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Trang chủ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#services">Dịch vụ</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 data-edit="hero_title">Giải Pháp Sáng Tạo Cho Doanh Nghiệp Của Bạn</h1>
+            <p data-edit="hero_subtitle">Chúng tôi cung cấp các dịch vụ chất lượng cao giúp bạn đạt được mục tiêu kinh doanh.</p>
+            <a href="#services" class="btn" data-edit="hero_cta_text">Khám Phá Dịch Vụ Của Chúng Tôi</a>
+            <div id="img-A1" class="image-slot-overlay" data-image-slot="A1" style="display: none;">Ảnh cần cập nhật: A1 - Ảnh nền Hero</div>
+        </div>
+    </section>
+
+    <section id="about" class="section light-bg">
+        <div class="container">
+            <h2 class="section-title" data-edit="about_title">Về Chúng Tôi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-edit="about_paragraph_1">Tên Doanh Nghiệp là công ty hàng đầu trong lĩnh vực tư vấn và phát triển giải pháp công nghệ. Với hơn 10 năm kinh nghiệm, chúng tôi tự hào mang đến những sản phẩm và dịch vụ đột phá, giúp khách hàng tối ưu hóa hoạt động và tăng cường hiệu quả kinh doanh.</p>
+                    <p data-edit="about_paragraph_2">Đội ngũ chuyên gia của chúng tôi luôn nỗ lực không ngừng để nghiên cứu và áp dụng những công nghệ tiên tiến nhất, đảm bảo mọi giải pháp đều được tùy chỉnh phù hợp với nhu cầu riêng biệt của từng khách hàng. Chúng tôi cam kết đồng hành cùng sự phát triển bền vững của doanh nghiệp bạn.</p>
+                </div>
+                <div id="img-A2" class="about-image-placeholder" data-image-slot="A2">
+                    Ảnh cần cập nhật: A2 - Hình ảnh giới thiệu
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="services_title">Dịch Vụ Của Chúng Tôi</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div id="img-A3" class="service-card-icon-placeholder" data-image-slot="A3">
+                        A3
+                    </div>
+                    <h3 data-edit="service_1_title">Tư Vấn Chiến Lược</h3>
+                    <p data-edit="service_1_description">Cung cấp các phân tích chuyên sâu và kế hoạch hành động chiến lược, giúp doanh nghiệp định hướng phát triển bền vững trong môi trường cạnh tranh.</p>
+                </div>
+                <div class="service-card">
+                    <div id="img-A4" class="service-card-icon-placeholder" data-image-slot="A4">
+                        A4
+                    </div>
+                    <h3 data-edit="service_2_title">Phát Triển Phần Mềm</h3>
+                    <p data-edit="service_2_description">Thiết kế và xây dựng các ứng dụng phần mềm tùy chỉnh, đáp ứng mọi yêu cầu đặc thù của khách hàng, từ web đến mobile.</p>
+                </div>
+                <div class="service-card">
+                    <div id="img-A5" class="service-card-icon-placeholder" data-image-slot="A5">
+                        A5
+                    </div>
+                    <h3 data-edit="service_3_title">Quản Lý Dự Án</h3>
+                    <p data-edit="service_3_description">Đảm bảo các dự án được triển khai hiệu quả, đúng tiến độ và ngân sách, với sự giám sát chặt chẽ từ đội ngũ chuyên nghiệp của chúng tôi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section light-bg">
+        <div class="container">
+            <h2 class="section-title" data-edit="contact_title">Liên Hệ Với Chúng Tôi</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><strong>Hotline:</strong> <span data-edit="hotline">+84 987 654 321</span></p>
+                    <p><strong>Email:</strong> <span data-edit="email">info@tendoanhnghiep.com</span></p>
+                    <p><strong>Địa chỉ:</strong> <span data-edit="address">123 Đường ABC, Quận XYZ, Thành phố HCM</span></p>
+                </div>
+                <div id="img-A6" class="contact-map-placeholder" data-image-slot="A6">
+                    Ảnh cần cập nhật: A6 - Bản đồ vị trí
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-edit="footer_copyright">&copy; 2023 Tên Doanh Nghiệp. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <!-- IMAGE SLOT MAP START -->
+A1 - Ảnh nền cho phần Hero
+A2 - Hình ảnh minh họa cho phần Giới thiệu
+A3 - Icon/Hình ảnh cho Dịch vụ 1 (Tư vấn Chiến lược)
+A4 - Icon/Hình ảnh cho Dịch vụ 2 (Phát triển Phần mềm)
+A5 - Icon/Hình ảnh cho Dịch vụ 3 (Quản lý Dự án)
+A6 - Bản đồ vị trí công ty cho phần Liên hệ
+    <!-- IMAGE SLOT MAP END -->
+</body>
+</html>
