@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-edit="page_title">Trang Chủ Doanh Nghiệp - Giải Pháp Chuyên Nghiệp</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --text-color: #343a40;
+            --background-light: #f8f9fa;
+            --background-dark: #e9ecef;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            background-color: #f0f8ff;
+            color: var(--text-color);
+            text-align: center;
+            padding: 100px 15px;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 200"><rect x="0" y="0" width="400" height="200" fill="%23f0f8ff"></rect><text x="50%" y="50%" font-family="Arial, sans-serif" font-size="30" fill="%23007bff" text-anchor="middle" alignment-baseline="middle">A1</text><text x="50%" y="65%" font-family="Arial, sans-serif" font-size="14" fill="%23343a40" text-anchor="middle" alignment-baseline="middle">Ảnh nền Hero</text></svg>');
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        #about {
+            background-color: var(--background-light);
+        }
+
+        #about .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        #about .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        #about .about-text h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        #about .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        #about .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        #services {
+            background-color: var(--white);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .service-card {
+            background-color: var(--background-light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card img {
+            max-width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: var(--secondary-color);
+        }
+
+        #cta-banner {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 15px;
+        }
+
+        #cta-banner h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        #cta-banner .btn {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        #cta-banner .btn:hover {
+            background-color: var(--background-dark);
+            color: var(--primary-color);
+        }
+
+        #contact {
+            background-color: var(--background-light);
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info p strong {
+            min-width: 80px;
+            display: inline-block;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button.btn {
+            width: auto;
+            align-self: flex-start;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: var(--background-dark);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .map-placeholder span {
+            display: block;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 38px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            .section-title {
+                font-size: 30px;
+            }
+            #about .about-content {
+                flex-direction: column;
+            }
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 30px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            #cta-banner h2 {
+                font-size: 28px;
+            }
+            nav ul li {
+                margin: 0 5px;
+            }
+        }
+
+        .placeholder-image {
+            background-color: var(--background-dark);
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.4;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .placeholder-image.tall {
+            height: 300px;
+        }
+        .placeholder-image.wide {
+            height: 250px;
+            width: 100%;
+        }
+
+        .placeholder-content {
+            padding: 15px;
+        }
+        .placeholder-content .id {
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+        }
+        .placeholder-content .desc {
+            font-size: 12px;
+            display: block;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo" data-edit="company_name">Tên Công Ty Của Bạn</a>
+            <nav>
+                <ul>
+                    <li><a href="#hero" data-edit="nav_home">Trang Chủ</a></li>
+                    <li><a href="#about" data-edit="nav_about">Giới Thiệu</a></li>
+                    <li><a href="#services" data-edit="nav_services">Dịch Vụ</a></li>
+                    <li><a href="#contact" data-edit="nav_contact">Liên Hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 data-edit="hero_title">Giải Pháp Toàn Diện Cho Doanh Nghiệp Của Bạn</h1>
+            <p data-edit="hero_subtitle">Chúng tôi cung cấp các dịch vụ chuyên nghiệp giúp doanh nghiệp phát triển bền vững và đạt được mục tiêu.</p>
+            <a href="#contact" class="btn" data-edit="hero_cta">Liên Hệ Ngay</a>
+        </div>
+        <div id="img-A1" class="placeholder-image" data-image-slot="A1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 123, 255, 0.1); z-index: 0;">
+             <div class="placeholder-content">
+                <span class="id">A1</span>
+                <span class="desc">Ảnh nền Hero (cần cập nhật)</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title" data-edit="about_section_title">Về Chúng Tôi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 data-edit="about_heading">Chuyên Nghiệp, Tận Tâm, Hiệu Quả</h3>
+                    <p data-edit="about_text_1">Với hơn một thập kỷ kinh nghiệm trong ngành, Công Ty Của Bạn tự hào là đối tác đáng tin cậy, mang đến các giải pháp tối ưu cho hàng trăm doanh nghiệp lớn nhỏ. Chúng tôi cam kết chất lượng dịch vụ hàng đầu, sự đổi mới không ngừng và tinh thần hợp tác chuyên nghiệp.</p>
+                    <p data-edit="about_text_2">Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng lắng nghe và thấu hiểu nhu cầu đặc thù của từng khách hàng, từ đó xây dựng những chiến lược và giải pháp phù hợp nhất, giúp bạn vượt qua mọi thách thức và nắm bắt cơ hội mới trên thị trường.</p>
+                    <a href="#services" class="btn" data-edit="about_cta">Tìm Hiểu Thêm Dịch Vụ</a>
+                </div>
+                <div class="about-image">
+                    <div id="img-A2" class="placeholder-image tall wide" data-image-slot="A2">
+                        <div class="placeholder-content">
+                            <span class="id">A2</span>
+                            <span class="desc">Ảnh minh họa Giới Thiệu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title" data-edit="services_section_title">Dịch Vụ Của Chúng Tôi</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div id="img-A3" class="placeholder-image wide" data-image-slot="A3">
+                        <div class="placeholder-content">
+                            <span class="id">A3</span>
+                            <span class="desc">Ảnh Dịch vụ 1</span>
+                        </div>
+                    </div>
+                    <h3 data-edit="service_1_title">Tư Vấn Chiến Lược</h3>
+                    <p data-edit="service_1_description">Phân tích thị trường, xác định mục tiêu và xây dựng lộ trình phát triển rõ ràng cho doanh nghiệp của bạn.</p>
+                </div>
+                <div class="service-card">
+                    <div id="img-A4" class="placeholder-image wide" data-image-slot="A4">
+                        <div class="placeholder-content">
+                            <span class="id">A4</span>
+                            <span class="desc">Ảnh Dịch vụ 2</span>
+                        </div>
+                    </div>
+                    <h3 data-edit="service_2_title">Phát Triển Phần Mềm</h3>
+                    <p data-edit="service_2_description">Thiết kế và triển khai các giải pháp phần mềm tùy chỉnh, đáp ứng mọi yêu cầu nghiệp vụ.</p>
+                </div>
+                <div class="service-card">
+                    <div id="img-A5" class="placeholder-image wide" data-image-slot="A5">
+                        <div class="placeholder-content">
+                            <span class="id">A5</span>
+                            <span class="desc">Ảnh Dịch vụ 3</span>
+                        </div>
+                    </div>
+                    <h3 data-edit="service_3_title">Marketing Kỹ Thuật Số</h3>
+                    <p data-edit="service_3_description">Tối ưu hóa hiện diện trực tuyến, tăng cường nhận diện thương hiệu và thu hút khách hàng tiềm năng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-banner">
+        <div class="container">
+            <h2 data-edit="cta_banner_title">Bạn đã sẵn sàng để nâng tầm doanh nghiệp?</h2>
+            <a href="#contact" class="btn" data-edit="cta_banner_button">Yêu Cầu Tư Vấn Ngay</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" data-edit="contact_section_title">Liên Hệ Với Chúng Tôi</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p data-edit="hotline"><strong>Hotline:</strong> 0987 654 321</p>
+                    <p data-edit="email"><strong>Email:</strong> info@tencongty.com</p>
+                    <p data-edit="address"><strong>Địa chỉ:</strong> Số 123, Đường ABC, Quận XYZ, TP. Hồ Chí Minh</p>
+                    <div id="img-A6" class="map-placeholder" data-image-slot="A6">
+                        <div class="placeholder-content">
+                            <span class="id">A6</span>
+                            <span class="desc">Bản đồ địa điểm (cần cập nhật)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Họ và tên" data-edit="form_name_placeholder" required>
+                        <input type="email" placeholder="Email của bạn" data-edit="form_email_placeholder" required>
+                        <input type="text" placeholder="Số điện thoại (tùy chọn)" data-edit="form_phone_placeholder">
+                        <textarea placeholder="Lời nhắn của bạn" data-edit="form_message_placeholder" required></textarea>
+                        <button type="submit" class="btn" data-edit="form_submit_button">Gửi Yêu Cầu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-edit="footer_copyright">© 2024 Tên Công Ty Của Bạn. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <!-- IMAGE SLOT MAP START -->
+A1 - Ảnh nền lớn cho phần Hero, tạo ấn tượng chuyên nghiệp cho doanh nghiệp.
+A2 - Ảnh minh họa cho phần Giới Thiệu, thể hiện sự tin cậy hoặc hình ảnh đội ngũ.
+A3 - Ảnh minh họa cho Dịch vụ 1 (Tư vấn chiến lược).
+A4 - Ảnh minh họa cho Dịch vụ 2 (Phát triển phần mềm).
+A5 - Ảnh minh họa cho Dịch vụ 3 (Marketing kỹ thuật số).
+A6 - Placeholder cho bản đồ địa điểm công ty, hiển thị vị trí liên hệ.
+    <!-- IMAGE SLOT MAP END -->
+</body>
+</html>
