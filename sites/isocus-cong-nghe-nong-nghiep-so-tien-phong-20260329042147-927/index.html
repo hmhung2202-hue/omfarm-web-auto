@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isocus - Công Nghệ Nông Nghiệp Số Tiên Phong</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #2e8b57;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4682b4;
+            color: #ffffff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2f5f8b;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2e8b57;
+            text-decoration: none;
+        }
+
+        .contact-info a {
+            color: #4682b4;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080/3CB371/FFFFFF?text=Smart+Agriculture+Technology') no-repeat center center/cover;
+            color: #ffffff;
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        #hero h2 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        #hero p {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 20px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        section:nth-child(even) {
+            background-color: #eaf1f0;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #2e8b57;
+        }
+
+        /* Services Section Specific */
+        #services .service-item {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        #services .service-item h3 {
+            font-size: 1.8em;
+            color: #4682b4;
+            margin-bottom: 15px;
+        }
+
+        #services .service-item p {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #contact form input[type="text"],
+        #contact form input[type="email"],
+        #contact form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        #contact form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        #contact form .btn {
+            align-self: center;
+            width: auto;
+            padding: 12px 40px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .contact-info a {
+                margin: 0 10px;
+            }
+
+            #hero {
+                padding: 80px 15px;
+            }
+
+            #hero h1 {
+                font-size: 2.5em;
+            }
+
+            #hero h2 {
+                font-size: 1.4em;
+            }
+
+            section {
+                padding: 40px 15px;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            #services .service-item h3 {
+                font-size: 1.5em;
+            }
+
+            #contact form input[type="text"],
+            #contact form input[type="email"],
+            #contact form textarea {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #hero h1 {
+                font-size: 2em;
+            }
+
+            #hero h2 {
+                font-size: 1.2em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            header .contact-info {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Isocus</a>
+            <div class="contact-info">
+                <a href="tel:0971504495">Điện thoại: 0971504495</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <h1>Isocus</h1>
+        <h2>Công nghệ nông nghiệp số tiên phong</h2>
+        <p>Giải pháp truy xuất nguồn gốc OCOP và quản lý nông sản thông minh, mang lại giá trị bền vững cho chuỗi cung ứng.</p>
+        <a href="#contact" class="btn">Liên hệ tư vấn ngay</a>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Về Isocus</h2>
+            <p>Isocus là công ty dẫn đầu trong lĩnh vực công nghệ nông nghiệp số tại Việt Nam. Chúng tôi phát triển và cung cấp các giải pháp toàn diện, từ hệ thống giám sát nông nghiệp thông minh đến nền tảng truy xuất nguồn gốc sản phẩm OCOP, giúp tối ưu hóa quy trình sản xuất, nâng cao chất lượng nông sản và xây dựng niềm tin cho người tiêu dùng. Với Isocus, nông nghiệp không chỉ là truyền thống mà còn là tương lai của sự đổi mới và bền vững.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Giải pháp của chúng tôi</h2>
+            <div class="service-item">
+                <h3>Hệ thống truy xuất nguồn gốc OCOP</h3>
+                <p>Áp dụng công nghệ Blockchain và IoT, Isocus cung cấp giải pháp truy xuất nguồn gốc minh bạch cho sản phẩm OCOP. Mọi thông tin từ khâu trồng trọt, chăm sóc, thu hoạch đến chế biến và phân phối đều được ghi lại và hiển thị rõ ràng, giúp người tiêu dùng dễ dàng kiểm tra, đảm bảo chất lượng và nguồn gốc xuất xứ.</p>
+            </div>
+            <div class="service-item">
+                <h3>Nền tảng quản lý nông trại thông minh</h3>
+                <p>Chúng tôi cung cấp công cụ giám sát môi trường, quản lý cây trồng, vật nuôi bằng cảm biến thông minh và phân tích dữ liệu. Giải pháp giúp nông dân tối ưu hóa việc sử dụng tài nguyên (nước, phân bón), phòng ngừa dịch bệnh hiệu quả, nâng cao năng suất và chất lượng nông sản một cách bền vững.</p>
+            </div>
+            <div class="service-item">
+                <h3>Tư vấn và chuyển giao công nghệ</h3>
+                <p>Đội ngũ chuyên gia của Isocus luôn sẵn sàng tư vấn và chuyển giao các công nghệ nông nghiệp 4.0 tiên tiến nhất, phù hợp với từng quy mô và loại hình sản xuất. Chúng tôi đồng hành cùng khách hàng để ứng dụng công nghệ thành công, tạo ra lợi thế cạnh tranh trên thị trường.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Liên hệ Isocus</h2>
+            <p>Bạn cần tư vấn về lĩnh vực gì? Hãy liên hệ với chúng tôi để nhận được sự hỗ trợ chuyên nghiệp và giải pháp tối ưu cho nông nghiệp của bạn.</p>
+            <p><strong>Hotline: 0971504495</strong></p>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Họ và tên của bạn" required>
+                <input type="email" name="email" placeholder="Email của bạn" required>
+                <input type="text" name="phone" placeholder="Số điện thoại của bạn">
+                <textarea name="message" placeholder="Bạn cần tư vấn về lĩnh vực gì?" required></textarea>
+                <button type="submit" class="btn">Gửi yêu cầu tư vấn</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Isocus. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+</body>
+</html>
