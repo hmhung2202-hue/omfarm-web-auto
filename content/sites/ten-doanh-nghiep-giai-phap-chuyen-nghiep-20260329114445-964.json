@@ -1,0 +1,67 @@
+{
+  "site_name": "Tên Doanh Nghiệp - Giải Pháp Chuyên Nghiệp",
+  "slug": "ten-doanh-nghiep-giai-phap-chuyen-nghiep-20260329114445-964",
+  "title": "Tên Doanh Nghiệp - Giải Pháp Chuyên Nghiệp",
+  "summary": "Trang landing page mẫu với bố cục hiện đại, chuyên nghiệp, responsive, sẵn sàng cho nội dung doanh nghiệp và hình ảnh thực tế.",
+  "company": {
+    "name": "Tên Doanh Nghiệp - Giải Pháp Chuyên Nghiệp",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Tên Doanh Nghiệp - Giải Pháp Chuyên Nghiệp",
+    "subtitle": "Trang landing page mẫu với bố cục hiện đại, chuyên nghiệp, responsive, sẵn sàng cho nội dung doanh nghiệp và hình ảnh thực tế.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Trang landing page mẫu với bố cục hiện đại, chuyên nghiệp, responsive, sẵn sàng cho nội dung doanh nghiệp và hình ảnh thực tế.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    }
+  ]
+}
