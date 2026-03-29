@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-edit="page_title">Dược Liệu Bình Minh - Tinh Hoa Thiên Nhiên Việt</title>
+    <style>
+        :root {
+            --primary-color: #388E3C; /* Dark Green */
+            --secondary-color: #66BB6A; /* Light Green */
+            --accent-color: #FFB300; /* Amber */
+            --text-color: #333;
+            --light-text-color: #f8f8f8;
+            --bg-light: #F9F9F9;
+            --bg-dark: #2C3E50; /* Dark Blue Grey for contrast */
+            --card-bg: #FFFFFF;
+            --border-color: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            color: var(--accent-color);
+            margin-left: 5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: var(--bg-dark);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-section .hero-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        .hero-section .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-section p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-section .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--bg-dark);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .hero-section .btn:hover {
+            background-color: #FFC107;
+            transform: translateY(-2px);
+        }
+
+        /* Placeholder Image */
+        .img-placeholder {
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1em;
+            text-align: center;
+            border: 1px dashed #ccc;
+            overflow: hidden;
+            position: relative;
+        }
+        .img-placeholder::before {
+            content: attr(data-image-slot);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #aaa;
+        }
+        .img-placeholder span {
+            padding: 10px;
+        }
+        .hero-section .img-placeholder {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+            border: none;
+        }
+        .hero-section .img-placeholder span {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--bg-light);
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.8em;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-section .content-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .about-section .text-content {
+            flex: 1;
+        }
+        .about-section .text-content h3 {
+            font-size: 2em;
+            color: var(--text-color);
+            margin-bottom: 20px;
+        }
+        .about-section .text-content p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .about-section .image-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-section .img-placeholder {
+            width: 100%;
+            height: 400px;
+            border-radius: 8px;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-card .img-placeholder {
+            width: 100%;
+            height: 200px;
+            border-bottom: 1px solid var(--border-color);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .product-card .product-info {
+            padding: 25px;
+        }
+
+        .product-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .product-card p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .product-card .btn-details {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--light-text-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+        .product-card .btn-details:hover {
+            background-color: #5cb85c;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--bg-dark);
+            color: var(--light-text-color);
+        }
+        .contact-section h2 {
+            color: var(--secondary-color);
+        }
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+        .contact-info,
+        .contact-map {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .contact-info strong {
+            color: var(--secondary-color);
+        }
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: #FFC107;
+        }
+        .contact-map .img-placeholder {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #bbb;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links li {
+                margin: 0 15px 10px;
+            }
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            .hero-section p {
+                font-size: 1em;
+            }
+            section {
+                padding: 60px 0;
+            }
+            section h2 {
+                font-size: 2em;
+                margin-bottom: 40px;
+            }
+            .about-section .content-wrapper {
+                flex-direction: column;
+            }
+            .about-section .image-content {
+                order: -1; /* Image appears above text on mobile */
+                margin-bottom: 30px;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-card .product-info {
+                padding: 20px;
+            }
+            .product-card h3 {
+                font-size: 1.3em;
+            }
+            .contact-content {
+                flex-direction: column;
+            }
+            .contact-info, .contact-map {
+                min-width: unset;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 24px;
+            }
+            .nav-links li {
+                margin: 0 10px 10px;
+            }
+            .hero-section {
+                padding: 80px 15px;
+                min-height: 400px;
+            }
+            .hero-section h1 {
+                font-size: 2em;
+            }
+            .hero-section p {
+                font-size: 0.9em;
+            }
+            .hero-section .btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+            section h2 {
+                font-size: 1.8em;
+            }
+            .about-section .text-content h3 {
+                font-size: 1.5em;
+            }
+            .about-section .text-content p {
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo" data-edit="company_name">Bình Minh<span>Dược Liệu</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Trang chủ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#products">Sản phẩm</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div id="img-A1" data-image-slot="A1" class="img-placeholder" style="background-image: url('placeholder-A1-background.jpg');">
+            <span>Ảnh nền Hero - Cánh đồng dược liệu lúc bình minh</span>
+        </div>
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <h1 data-edit="hero_title">Dược Liệu Bình Minh</h1>
+            <p data-edit="hero_subtitle">Nâng Tầm Sức Khỏe Việt Từ Tinh Hoa Thiên Nhiên</p>
+            <a href="#products" class="btn" data-edit="hero_cta_text">Khám Phá Sản Phẩm</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 data-edit="about_title">Về Chúng Tôi</h2>
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <p data-edit="about_text">Dược Liệu Bình Minh tự hào là đơn vị tiên phong trong việc trồng trọt, thu hoạch và cung cấp các loại dược liệu tươi, khô chất lượng cao. Với sứ mệnh mang tinh hoa của đất trời Việt đến gần hơn với sức khỏe cộng đồng, chúng tôi cam kết quy trình sản xuất sạch, bền vững và truy xuất nguồn gốc rõ ràng.</p>
+                    <p data-edit="about_mission">Mỗi sản phẩm từ Bình Minh đều là kết tinh của sự tận tâm, từ khâu chọn giống, chăm sóc đến chế biến, đảm bảo giữ trọn vẹn giá trị dược tính quý báu. Chúng tôi không ngừng nghiên cứu và phát triển để mang đến những dược liệu tốt nhất, góp phần nâng cao chất lượng cuộc sống cho mọi nhà.</p>
+                </div>
+                <div class="image-content">
+                    <div id="img-A2" data-image-slot="A2" class="img-placeholder">
+                        <span>Ảnh Giới thiệu - Nông trại dược liệu sạch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 data-edit="products_title">Sản Phẩm Của Chúng Tôi</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div id="img-A3" data-image-slot="A3" class="img-placeholder">
+                        <span>Ảnh Sa Nhân</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 data-edit="product_1_name">Sa Nhân</h3>
+                        <p data-edit="product_1_desc">Vị thuốc quý giúp kiện tỳ, hành khí, tiêu thực, thường dùng trong các bài thuốc về tiêu hóa.</p>
+                        <a href="#contact" class="btn-details">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div id="img-A4" data-image-slot="A4" class="img-placeholder">
+                        <span>Ảnh Cam Thảo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 data-edit="product_2_name">Cam Thảo</h3>
+                        <p data-edit="product_2_desc">Dược liệu đa công dụng, giải độc, chống viêm, điều hòa các vị thuốc khác trong thang.</p>
+                        <a href="#contact" class="btn-details">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div id="img-A5" data-image-slot="A5" class="img-placeholder">
+                        <span>Ảnh Cà Gai Leo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 data-edit="product_3_name">Cà Gai Leo</h3>
+                        <p data-edit="product_3_desc">Nổi tiếng với khả năng hỗ trợ chức năng gan, giải độc gan hiệu quả.</p>
+                        <a href="#contact" class="btn-details">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div id="img-A7" data-image-slot="A7" class="img-placeholder">
+                        <span>Ảnh Hương Nhu</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 data-edit="product_4_name">Hương Nhu</h3>
+                        <p data-edit="product_4_desc">Dược liệu có tính ấm, giúp giải cảm, hạ sốt, và hỗ trợ điều trị các bệnh về đường hô hấp.</p>
+                        <a href="#contact" class="btn-details">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div id="img-A8" data-image-slot="A8" class="img-placeholder">
+                        <span>Ảnh Nhục Thung Dung</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 data-edit="product_5_name">Nhục Thung Dung</h3>
+                        <p data-edit="product_5_desc">Vị thuốc bổ thận tráng dương, ích tinh huyết, thường dùng trong các bài thuốc tăng cường sinh lực.</p>
+                        <a href="#contact" class="btn-details">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div id="img-A9" data-image-slot="A9" class="img-placeholder">
+                        <span>Ảnh Quế</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 data-edit="product_6_name">Quế</h3>
+                        <p data-edit="product_6_desc">Hương vị ấm nồng, không chỉ là gia vị mà còn là dược liệu tốt cho tiêu hóa, giữ ấm cơ thể.</p>
+                        <a href="#contact" class="btn-details">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 data-edit="contact_title">Liên Hệ Với Chúng Tôi</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p data-edit="contact_intro">Dược Liệu Bình Minh luôn sẵn lòng lắng nghe và phục vụ quý khách. Hãy liên hệ với chúng tôi để được tư vấn chi tiết về các sản phẩm dược liệu chất lượng cao.</p>
+                    <p><strong>Hotline:</strong> <a href="tel:098989999" data-edit="hotline">098989999</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:combua@org.com" data-edit="email">combua@org.com</a></p>
+                    <p><strong>Địa chỉ:</strong> <span data-edit="address">[Địa chỉ công ty Bình Minh - Vui lòng cập nhật]</span></p>
+                </div>
+                <div class="contact-map">
+                    <div id="img-A6" data-image-slot="A6" class="img-placeholder">
+                        <span>Ảnh Bản đồ hoặc Văn phòng</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 <span data-edit="company_name_footer">Dược Liệu Bình Minh</span>. Bảo lưu mọi quyền.</p>
+        </div>
+    </footer>
+
+<!-- IMAGE SLOT MAP START -->
+A1 - Hình ảnh nền cho phần Hero: Cánh đồng dược liệu hoặc phong cảnh thiên nhiên tươi mới lúc bình minh.
+A2 - Hình ảnh cho phần Giới thiệu: Nông trại dược liệu sạch, quy trình trồng trọt, hoặc nhân viên đang làm việc với dược liệu.
+A3 - Hình ảnh sản phẩm Sa Nhân (tươi hoặc khô).
+A4 - Hình ảnh sản phẩm Cam Thảo (tươi hoặc khô).
+A5 - Hình ảnh sản phẩm Cà Gai Leo (tươi hoặc khô).
+A6 - Hình ảnh bản đồ vị trí công ty hoặc hình ảnh văn phòng/showroom liên hệ.
+A7 - Hình ảnh sản phẩm Hương Nhu (tươi hoặc khô).
+A8 - Hình ảnh sản phẩm Nhục Thung Dung (tươi hoặc khô).
+A9 - Hình ảnh sản phẩm Quế (thanh quế hoặc bột quế).
+<!-- IMAGE SLOT MAP END -->
+</body>
+</html>
