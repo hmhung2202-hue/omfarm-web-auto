@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-edit="page_title">Isocus - Công ty Công nghệ Nông nghiệp Số & Truy xuất OCOP</title>
+    <style>
+        :root {
+            --primary-green: #28a745;
+            --secondary-blue: #007bff;
+            --accent-yellow: #ffc107;
+            --text-dark: #343a40;
+            --text-light: #f8f9fa;
+            --bg-light: #ffffff;
+            --bg-dark: #f0f8f0;
+            --border-color: #dee2e6;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-blue);
+        }
+
+        a:hover {
+            color: var(--primary-green);
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-green);
+            margin: 10px auto 0;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            padding: 12px 25px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--bg-light);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-transform: uppercase;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .main-nav ul li a {
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><rect width="100" height="100" fill="#e0ffe0"/><text x="50%" y="50%" font-family="Arial" font-size="8" fill="#6c757d" text-anchor="middle" alignment-baseline="middle">A1 - Ảnh nền Hero</text></svg>') no-repeat center center/cover;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+
+        /* Section Base */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-light-bg {
+            background-color: var(--bg-light);
+        }
+
+        .section-dark-bg {
+            background-color: var(--bg-dark);
+        }
+
+        /* About Us */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 250px;
+            height: 250px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            text-align: center;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            overflow: hidden;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><rect width="100" height="100" fill="#e9fce9"/><text x="50%" y="50%" font-family="Arial" font-size="8" fill="#6c757d" text-anchor="middle" alignment-baseline="middle">A2 - Ảnh giới thiệu</text></svg>') no-repeat center center/cover;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Solutions & Services */
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .solution-card {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--primary-green);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .solution-card .icon-placeholder {
+            width: 80px;
+            height: 80px;
+            background-color: var(--bg-dark);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--primary-green);
+            font-weight: bold;
+            border: 2px solid var(--primary-green);
+            overflow: hidden;
+        }
+
+        .solution-card .icon-placeholder svg {
+            width: 50px;
+            height: 50px;
+            fill: var(--primary-green);
+        }
+
+        .solution-card h3 {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .solution-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Benefits Section */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 25px;
+            border-radius: 8px;
+            background-color: var(--bg-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-item .icon-placeholder {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px;
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .benefit-item h4 {
+            font-size: 1.25rem;
+            color: var(--secondary-blue);
+            margin-bottom: 10px;
+        }
+
+        .benefit-item p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: var(--primary-green);
+            color: var(--text-light);
+            text-align: center;
+            padding: 80px 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><rect width="100" height="100" fill="#d4edda"/><text x="50%" y="50%" font-family="Arial" font-size="8" fill="#28a745" text-anchor="middle" alignment-baseline="middle">A9 - Ảnh nền CTA</text></svg>') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(40, 167, 69, 0.7);
+            z-index: 1;
+        }
+
+        .cta-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            color: var(--text-light);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .cta-section h2::after {
+            background-color: var(--text-light);
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+
+        .cta-section .btn {
+            background-color: var(--accent-yellow);
+            color: var(--text-dark);
+            font-weight: 700;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+        }
+
+        .cta-section .btn:hover {
+            background-color: #e0a800;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info p strong {
+            color: var(--primary-green);
+        }
+
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-family: var(--font-family);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-green);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 20px;
+            overflow: hidden;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100"><rect width="100" height="100" fill="#e9ecef"/><text x="50%" y="50%" font-family="Arial" font-size="8" fill="#6c757d" text-anchor="middle" alignment-baseline="middle">A10 - Vị trí bản đồ</text></svg>') no-repeat center center/cover;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--text-dark);
+            color: var(--text-light);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .footer-nav ul li a {
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .main-nav {
+                display: none;
+                width: 100%;
+                order: 3;
+                margin-top: 15px;
+            }
+            .main-nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .header .container {
+                justify-content: center;
+            }
+            .header-contact {
+                order: 2;
+                width: 100%;
+                justify-content: center;
+                margin-top: 15px;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            h3 {
+                font-size: 1.4rem;
+            }
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image {
+                order: -1; /* Image above text on mobile */
+                margin-bottom: 20px;
+            }
+            .solutions-grid, .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-content {
+                flex-direction: column;
+            }
+            .footer-nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .logo {
+                font-size: 1.5rem;
+            }
+            .header-contact .btn {
+                display: none; /* Hide contact button on smallest screens in header */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo" data-edit="company_name">Isocus</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#hero" data-edit="nav_home">Trang chủ</a></li>
+                    <li><a href="#about" data-edit="nav_about">Giới thiệu</a></li>
+                    <li><a href="#solutions" data-edit="nav_solutions">Giải pháp & Dịch vụ</a></li>
+                    <li><a href="#benefits" data-edit="nav_benefits">Lợi ích</a></li>
+                    <li><a href="#contact" data-edit="nav_contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <a href="tel:0971504495" class="btn btn-outline" data-edit="hotline_header">Hotline: 0971504495</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="hero" data-image-slot="A1">
+        <div class="container">
+            <h1 data-edit="hero_title">Isocus: Đưa Công Nghệ Số Vào Nông Nghiệp Việt</h1>
+            <p data-edit="hero_subtitle">Giải pháp toàn diện từ Truy xuất OCOP đến Quản lý Nông trại Thông minh, vì một nền nông nghiệp bền vững và hiệu quả.</p>
+            <a href="#contact" class="btn" data-edit="hero_cta_text">Nhận tư vấn ngay</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding section-light-bg">
+        <div class="container">
+            <h2 data-edit="about_heading">Về Isocus</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-edit="about_text_1">Isocus là công ty tiên phong trong lĩnh vực công nghệ nông nghiệp số tại Việt Nam. Chúng tôi tin rằng công nghệ là chìa khóa để khai mở tiềm năng to lớn của ngành nông nghiệp, mang lại giá trị bền vững cho người nông dân, doanh nghiệp và cộng đồng.</p>
+                    <p data-edit="about_text_2">Với đội ngũ chuyên gia dày dạn kinh nghiệm và nền tảng công nghệ hiện đại, Isocus cung cấp các giải pháp toàn diện giúp tối ưu hóa quy trình sản xuất, quản lý chất lượng và nâng cao khả năng cạnh tranh cho nông sản Việt, đặc biệt trong việc truy xuất nguồn gốc sản phẩm OCOP.</p>
+                </div>
+                <div class="about-image" id="img-A2" data-image-slot="A2">
+                    Ảnh A2 - Giới thiệu Isocus
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="section-padding section-dark-bg">
+        <div class="container">
+            <h2 data-edit="solutions_heading">Giải Pháp & Dịch Vụ Của Chúng Tôi</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="icon-placeholder" id="img-A3" data-image-slot="A3">
+                        A3
+                    </div>
+                    <h3 data-edit="service_1_title">Truy xuất Nguồn gốc OCOP</h3>
+                    <p data-edit="service_1_description">Xây dựng và triển khai hệ thống truy xuất nguồn gốc minh bạch, chính xác cho sản phẩm OCOP, giúp nâng cao niềm tin người tiêu dùng và giá trị thương hiệu.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon-placeholder" id="img-A4" data-image-slot="A4">
+                        A4
+                    </div>
+                    <h3 data-edit="service_2_title">Nền tảng Quản lý Nông trại Thông minh</h3>
+                    <p data-edit="service_2_description">Giải pháp tích hợp giúp giám sát, điều khiển và tối ưu hóa các hoạt động nông nghiệp từ xa, tăng năng suất và giảm chi phí vận hành.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="icon-placeholder" id="img-A5" data-image-slot="A5">
+                        A5
+                    </div>
+                    <h3 data-edit="service_3_title">Phân tích Dữ liệu Nông nghiệp</h3>
+                    <p data-edit="service_3_description">Ứng dụng AI và Big Data để phân tích dữ liệu canh tác, dự báo sâu bệnh, thời tiết, hỗ trợ ra quyết định chính xác và kịp thời.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="section-padding section-light-bg">
+        <div class="container">
+            <h2 data-edit="benefits_heading">Lợi Ích Khách Hàng</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="icon-placeholder" id="img-A6" data-image-slot="A6">
+                        A6
+                    </div>
+                    <h4 data-edit="benefit_1_title">Tăng Trưởng Bền Vững</h4>
+                    <p data-edit="benefit_1_description">Áp dụng công nghệ giúp tối ưu hóa tài nguyên, giảm thiểu tác động môi trường và phát triển bền vững.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon-placeholder" id="img-A7" data-image-slot="A7">
+                        A7
+                    </div>
+                    <h4 data-edit="benefit_2_title">Minh Bạch & Tin Cậy</h4>
+                    <p data-edit="benefit_2_description">Hệ thống truy xuất nguồn gốc giúp sản phẩm đạt chuẩn, tăng cường niềm tin từ người tiêu dùng.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="icon-placeholder" id="img-A8" data-image-slot="A8">
+                        A8
+                    </div>
+                    <h4 data-edit="benefit_3_title">Hiệu Quả Vượt Trội</h4>
+                    <p data-edit="benefit_3_description">Nâng cao năng suất, giảm chi phí vận hành và tối đa hóa lợi nhuận thông qua quản lý thông minh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" data-image-slot="A9">
+        <div class="container">
+            <h2 data-edit="cta_heading">Bạn cần tư vấn về lĩnh vực gì?</h2>
+            <p data-edit="cta_text">Isocus luôn sẵn lòng lắng nghe và đưa ra giải pháp công nghệ phù hợp nhất cho dự án của bạn.</p>
+            <a href="#contact" class="btn" data-edit="cta_button_text">Liên hệ với chúng tôi</a>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding section-dark-bg">
+        <div class="container">
+            <h2 data-edit="contact_heading">Liên Hệ</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Thông Tin Liên Hệ</h3>
+                    <p><strong data-edit="contact_label_phone">Điện thoại:</strong> <a href="tel:0971504495" data-edit="hotline">0971504495</a></p>
+                    <p><strong data-edit="contact_label_email">Email:</strong> <a href="mailto:info@isocus.vn" data-edit="email">info@isocus.vn</a></p>
+                    <p><strong data-edit="contact_label_address">Địa chỉ:</strong> <span data-edit="address">[Địa chỉ công ty Isocus]</span></p>
+                    <div class="map-placeholder" id="img-A10" data-image-slot="A10">
+                        A10 - Vị trí bản đồ (ảnh cần cập nhật)
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Gửi Tin Nhắn Cho Chúng Tôi</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name" data-edit="form_label_name">Họ và Tên</label>
+                            <input type="text" id="name" name="name" required data-edit="form_name_placeholder" placeholder="Nhập họ và tên của bạn">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-edit="form_label_email">Email</label>
+                            <input type="email" id="email" name="email" required data-edit="form_email_placeholder" placeholder="Nhập địa chỉ email của bạn">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-edit="form_label_subject">Chủ đề</label>
+                            <input type="text" id="subject" name="subject" data-edit="form_subject_placeholder" placeholder="Chủ đề liên hệ">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-edit="form_label_message">Nội dung</label>
+                            <textarea id="message" name="message" required data-edit="form_message_placeholder" placeholder="Nội dung tin nhắn..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" data-edit="form_submit_button">Gửi tin nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-edit="footer_copyright">&copy; 2023 <span data-edit="company_name_footer">Isocus</span>. Mọi quyền được bảo lưu.</p>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#hero" data-edit="footer_link_home">Trang chủ</a></li>
+                    <li><a href="#about" data-edit="footer_link_about">Giới thiệu</a></li>
+                    <li><a href="#solutions" data-edit="footer_link_solutions">Giải pháp</a></li>
+                    <li><a href="#contact" data-edit="footer_link_contact">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- IMAGE SLOT MAP START -->
+A1 - Ảnh nền lớn cho phần Hero, chủ đề nông nghiệp công nghệ cao hoặc cánh đồng xanh mướt với yếu tố công nghệ.
+A2 - Ảnh minh họa cho phần Giới thiệu, có thể là hình ảnh đội ngũ Isocus, nghiên cứu, hoặc một cánh đồng ứng dụng công nghệ.
+A3 - Icon/Ảnh minh họa cho giải pháp "Truy xuất Nguồn gốc OCOP", có thể là mã QR hoặc chuỗi cung ứng.
+A4 - Icon/Ảnh minh họa cho "Nền tảng Quản lý Nông trại Thông minh", có thể là giao diện phần mềm, drone, hoặc cảm biến.
+A5 - Icon/Ảnh minh họa cho "Phân tích Dữ liệu Nông nghiệp", có thể là biểu đồ, dữ liệu lớn, hoặc màn hình phân tích.
+A6 - Icon/Ảnh minh họa cho lợi ích "Tăng Trưởng Bền Vững", có thể là cây xanh, năng lượng tái tạo, hoặc vòng đời sản phẩm.
+A7 - Icon/Ảnh minh họa cho lợi ích "Minh Bạch & Tin Cậy", có thể là chứng nhận, con dấu đảm bảo, hoặc quy trình rõ ràng.
+A8 - Icon/Ảnh minh họa cho lợi ích "Hiệu Quả Vượt Trội", có thể là biểu đồ tăng trưởng, bánh răng, hoặc bàn tay cầm mầm cây.
+A9 - Ảnh nền cho phần Kêu gọi Hành động, có thể là hình ảnh con người tương tác với công nghệ nông nghiệp hoặc logo Isocus.
+A10 - Ảnh bản đồ vị trí công ty Isocus.
+<!-- IMAGE SLOT MAP END -->
+
+</body>
+</html>
