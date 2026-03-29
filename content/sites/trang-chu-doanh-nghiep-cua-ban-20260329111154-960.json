@@ -1,0 +1,62 @@
+{
+  "site_name": "Trang Chủ Doanh Nghiệp Của Bạn",
+  "slug": "trang-chu-doanh-nghiep-cua-ban-20260329111154-960",
+  "title": "Trang Chủ Doanh Nghiệp Của Bạn",
+  "summary": "Một landing page hiện đại, chuyên nghiệp với cấu trúc rõ ràng cho doanh nghiệp, bao gồm các phần giới thiệu, dịch vụ và liên hệ, sẵn sàng tùy chỉnh nội dung.",
+  "company": {
+    "name": "Trang Chủ Doanh Nghiệp Của Bạn",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Trang Chủ Doanh Nghiệp Của Bạn",
+    "subtitle": "Một landing page hiện đại, chuyên nghiệp với cấu trúc rõ ràng cho doanh nghiệp, bao gồm các phần giới thiệu, dịch vụ và liên hệ, sẵn sàng tùy chỉnh nội dung.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Một landing page hiện đại, chuyên nghiệp với cấu trúc rõ ràng cho doanh nghiệp, bao gồm các phần giới thiệu, dịch vụ và liên hệ, sẵn sàng tùy chỉnh nội dung.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    }
+  ]
+}
