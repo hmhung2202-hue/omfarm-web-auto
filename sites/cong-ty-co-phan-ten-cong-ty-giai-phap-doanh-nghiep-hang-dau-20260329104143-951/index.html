@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-edit="page_title">Công Ty Cổ Phần [Tên Công Ty] - Giải Pháp Doanh Nghiệp Hàng Đầu</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --light-bg: #f8f9fa;
+            --dark-text: #343a40;
+            --light-text: #ffffff;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: var(--light-text);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light-text);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section {
+            padding: 80px 0;
+            background-color: var(--light-text);
+        }
+
+        .section:nth-of-type(even) {
+            background-color: var(--light-bg);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 50%;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 50%;
+        }
+
+        .about-text h2 {
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--light-text);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .card .icon {
+            font-size: 50px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+
+        .card p {
+            font-size: 16px;
+            color: var(--secondary-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info h3, .contact-form h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info p strong {
+            min-width: 80px;
+        }
+
+        .contact-info .icon {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .map-placeholder img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input[type="text"], 
+        .contact-form input[type="email"], 
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        footer {
+            background-color: var(--dark-text);
+            color: var(--light-text);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-icons a {
+            color: var(--light-text);
+            font-size: 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Placeholder styling for images */
+        .placeholder-image {
+            background-color: #e0e0e0;
+            color: #777;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px dashed #ccc;
+            overflow: hidden;
+        }
+
+        .placeholder-image.hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .placeholder-image.hero-bg div {
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .placeholder-image.about-img {
+            height: 350px;
+        }
+        .placeholder-image.service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            font-size: 24px;
+        }
+        .placeholder-image.map-img {
+            height: 300px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image, .about-text {
+                max-width: 100%;
+            }
+            .about-image img {
+                margin: 0 auto;
+            }
+            .hero h1 {
+                font-size: 38px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 10px 0;
+            }
+            .hamburger-menu {
+                display: block;
+            }
+            .hero {
+                height: 500px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .section-title {
+                font-size: 30px;
+                margin-bottom: 40px;
+            }
+            .section {
+                padding: 60px 0;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                margin-top: 10px;
+            }
+            .logo {
+                margin-bottom: 10px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 15px;
+            }
+        }
+
+        /* Basic icon placeholders using unicode characters or simple shapes */
+        .icon-lightbulb::before { content: '💡'; }
+        .icon-laptop::before { content: '💻'; }
+        .icon-rocket::before { content: '🚀'; }
+        .icon-chart::before { content: '📈'; }
+        .icon-users::before { content: '👥'; }
+        .icon-shield::before { content: '🛡️'; }
+        .icon-map-marker::before { content: '📍'; }
+        .icon-phone::before { content: '📞'; }
+        .icon-envelope::before { content: '✉️'; }
+        .icon-facebook::before { content: '📘'; }
+        .icon-twitter::before { content: '🐦'; }
+        .icon-linkedin::before { content: '🔗'; }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#" class="logo" data-edit="company_name">[Tên Công Ty]</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero" data-edit="nav_home">Trang chủ</a></li>
+                    <li><a href="#about" data-edit="nav_about">Giới thiệu</a></li>
+                    <li><a href="#services" data-edit="nav_services">Dịch vụ</a></li>
+                    <li><a href="#features" data-edit="nav_features">Điểm nổi bật</a></li>
+                    <li><a href="#contact" data-edit="nav_contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="placeholder-image hero-bg" id="img-A1" data-image-slot="A1">
+            <div>A1 - Ảnh nền Hero</div>
+            <p style="font-size:14px; position:absolute; bottom:10px; opacity:0.8;">Ảnh cần cập nhật</p>
+        </div>
+        <div class="hero-content">
+            <h1 data-edit="hero_title">Kiến Tạo Tương Lai Bền Vững Cùng Chúng Tôi</h1>
+            <p data-edit="hero_subtitle">Chuyên cung cấp các giải pháp và dịch vụ hàng đầu, mang lại giá trị thực cho doanh nghiệp của bạn.</p>
+            <a href="#services" class="btn" data-edit="hero_cta_button">Tìm hiểu thêm</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="about_section_title">Về Công Ty Chúng Tôi</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="placeholder-image about-img" id="img-A2" data-image-slot="A2">
+                        <div>A2 - Ảnh giới thiệu</div>
+                        <p style="font-size:14px; position:absolute; bottom:10px; opacity:0.8;">Ảnh cần cập nhật</p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2 data-edit="about_us_heading">Chuyên nghiệp, Đổi mới và Tận tâm</h2>
+                    <p data-edit="about_text_p1">Công Ty Cổ Phần <strong data-edit="company_name_about">[Tên Công Ty]</strong> tự hào là đơn vị tiên phong trong lĩnh vực <strong data-edit="main_business_field">giải pháp công nghệ và tư vấn chiến lược</strong>. Với hơn 10 năm kinh nghiệm, chúng tôi cam kết mang đến những giải pháp toàn diện, đột phá và hiệu quả nhất cho khách hàng.</p>
+                    <p data-edit="about_text_p2">Đội ngũ chuyên gia tận tâm của chúng tôi luôn nỗ lực không ngừng để tạo ra giá trị bền vững, góp phần vào sự phát triển chung của cộng đồng và xã hội, đồng thời đảm bảo chất lượng dịch vụ ở mức cao nhất.</p>
+                    <a href="#contact" class="btn" data-edit="about_cta_button">Liên hệ ngay</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="services_section_title">Dịch Vụ Của Chúng Tôi</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <div class="placeholder-image service-icon" id="img-A3" data-image-slot="A3">
+                        <div>A3</div>
+                        <p style="font-size:10px; position:absolute; bottom:5px; opacity:0.8;">Ảnh cần cập nhật</p>
+                    </div>
+                    <h3 data-edit="service_1_title">Tư vấn chiến lược</h3>
+                    <p data-edit="service_1_description">Cung cấp các giải pháp tư vấn chuyên sâu giúp doanh nghiệp định hình chiến lược phát triển bền vững và hiệu quả.</p>
+                </div>
+                <div class="card">
+                    <div class="placeholder-image service-icon" id="img-A4" data-image-slot="A4">
+                        <div>A4</div>
+                        <p style="font-size:10px; position:absolute; bottom:5px; opacity:0.8;">Ảnh cần cập nhật</p>
+                    </div>
+                    <h3 data-edit="service_2_title">Phát triển giải pháp công nghệ</h3>
+                    <p data-edit="service_2_description">Thiết kế và triển khai các hệ thống phần mềm, ứng dụng di động, website theo yêu cầu đặc thù của từng khách hàng.</p>
+                </div>
+                <div class="card">
+                    <div class="placeholder-image service-icon" id="img-A5" data-image-slot="A5">
+                        <div>A5</div>
+                        <p style="font-size:10px; position:absolute; bottom:5px; opacity:0.8;">Ảnh cần cập nhật</p>
+                    </div>
+                    <h3 data-edit="service_3_title">Quản lý dự án chuyên nghiệp</h3>
+                    <p data-edit="service_3_description">Đảm bảo các dự án được thực hiện đúng tiến độ, ngân sách và đạt chất lượng cao nhất với đội ngũ quản lý giàu kinh nghiệm.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="features_section_title">Tại Sao Chọn Chúng Tôi?</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <div class="icon icon-users"></div>
+                    <h3 data-edit="feature_1_title">Đội ngũ chuyên gia</h3>
+                    <p data-edit="feature_1_description">Với đội ngũ nhân sự giàu kinh nghiệm, chuyên môn cao và luôn cập nhật công nghệ mới nhất.</p>
+                </div>
+                <div class="card">
+                    <div class="icon icon-lightbulb"></div>
+                    <h3 data-edit="feature_2_title">Giải pháp sáng tạo</h3>
+                    <p data-edit="feature_2_description">Luôn tìm tòi, đổi mới để mang đến những giải pháp tối ưu, đột phá cho mọi thách thức.</p>
+                </div>
+                <div class="card">
+                    <div class="icon icon-shield"></div>
+                    <h3 data-edit="feature_3_title">Cam kết chất lượng</h3>
+                    <p data-edit="feature_3_description">Chất lượng là ưu tiên hàng đầu, mọi dịch vụ và sản phẩm đều được kiểm tra nghiêm ngặt.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="contact_section_title">Liên Hệ Với Chúng Tôi</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 data-edit="contact_info_heading">Thông Tin Liên Hệ</h3>
+                    <p><span class="icon icon-map-marker"></span> <strong data-edit="address_label">Địa chỉ:</strong> <span data-edit="company_address">123 Đường ABC, Quận XYZ, TP.HCM</span></p>
+                    <p><span class="icon icon-phone"></span> <strong data-edit="phone_label">Hotline:</strong> <span data-edit="company_hotline">0987 654 321</span></p>
+                    <p><span class="icon icon-envelope"></span> <strong data-edit="email_label">Email:</strong> <span data-edit="company_email">info@congty.com</span></p>
+                    <div class="map-placeholder">
+                        <div class="placeholder-image map-img" id="img-A6" data-image-slot="A6">
+                            <div>A6 - Bản đồ vị trí</div>
+                            <p style="font-size:14px; position:absolute; bottom:10px; opacity:0.8;">Ảnh cần cập nhật</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 data-edit="contact_form_heading">Gửi Yêu Cầu Cho Chúng Tôi</h3>
+                    <form action="#" method="POST">
+                        <input type="text" placeholder="Họ và tên" required data-edit="form_name_placeholder">
+                        <input type="email" placeholder="Email của bạn" required data-edit="form_email_placeholder">
+                        <input type="text" placeholder="Số điện thoại" data-edit="form_phone_placeholder">
+                        <textarea placeholder="Nội dung tin nhắn" required data-edit="form_message_placeholder"></textarea>
+                        <button type="submit" class="btn" data-edit="form_submit_button">Gửi tin nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-edit="footer_copyright">&copy; 2023 [Tên Công Ty]. Bảo lưu mọi quyền.</p>
+            <ul class="footer-links">
+                <li><a href="#" data-edit="footer_privacy">Chính sách bảo mật</a></li>
+                <li><a href="#" data-edit="footer_terms">Điều khoản sử dụng</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#" class="icon icon-facebook" aria-label="Facebook"></a>
+                <a href="#" class="icon icon-twitter" aria-label="Twitter"></a>
+                <a href="#" class="icon icon-linkedin" aria-label="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- IMAGE SLOT MAP START -->
+A1 - Ảnh nền chính cho phần Hero (ví dụ: phong cảnh thành phố, đội ngũ làm việc, hình ảnh trừu tượng công nghệ)
+A2 - Ảnh minh họa cho phần giới thiệu về công ty (ví dụ: kiến trúc văn phòng, nhóm làm việc)
+A3 - Ảnh hoặc biểu tượng cho Dịch vụ 1: Tư vấn chiến lược (ví dụ: biểu đồ, người đang thảo luận)
+A4 - Ảnh hoặc biểu tượng cho Dịch vụ 2: Phát triển giải pháp công nghệ (ví dụ: màn hình code, chip máy tính)
+A5 - Ảnh hoặc biểu tượng cho Dịch vụ 3: Quản lý dự án chuyên nghiệp (ví dụ: biểu đồ gantt, người quản lý)
+A6 - Ảnh bản đồ vị trí công ty (ví dụ: Google Maps screenshot)
+<!-- IMAGE SLOT MAP END -->
+
+</body>
+</html>
