@@ -1,0 +1,77 @@
+{
+  "site_name": "Tên Doanh Nghiệp - Landing Page Chuyên Nghiệp",
+  "slug": "ten-doanh-nghiep-landing-page-chuyen-nghiep-20260329115035-965",
+  "title": "Tên Doanh Nghiệp - Landing Page Chuyên Nghiệp",
+  "summary": "Landing page hiện đại và chuyên nghiệp cho doanh nghiệp, với bố cục rõ ràng, bám sát ảnh mẫu, tập trung vào giới thiệu, dịch vụ và thông tin liên hệ.",
+  "company": {
+    "name": "Tên Doanh Nghiệp - Landing Page Chuyên Nghiệp",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Tên Doanh Nghiệp - Landing Page Chuyên Nghiệp",
+    "subtitle": "Landing page hiện đại và chuyên nghiệp cho doanh nghiệp, với bố cục rõ ràng, bám sát ảnh mẫu, tập trung vào giới thiệu, dịch vụ và thông tin liên hệ.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Landing page hiện đại và chuyên nghiệp cho doanh nghiệp, với bố cục rõ ràng, bám sát ảnh mẫu, tập trung vào giới thiệu, dịch vụ và thông tin liên hệ.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": "",
+    "A7": "",
+    "A8": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A7",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A8",
+      "value": ""
+    }
+  ]
+}
