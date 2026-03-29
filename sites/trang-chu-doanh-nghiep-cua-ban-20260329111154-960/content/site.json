@@ -1,0 +1,33 @@
+{
+  "action": "create",
+  "slug": "trang-chu-doanh-nghiep-cua-ban-20260329111154-960",
+  "company_key": "trang-chu-doanh-nghiep-cua-ban",
+  "title": "Trang Chủ Doanh Nghiệp Của Bạn",
+  "summary": "Một landing page hiện đại, chuyên nghiệp với cấu trúc rõ ràng cho doanh nghiệp, bao gồm các phần giới thiệu, dịch vụ và liên hệ, sẵn sàng tùy chỉnh nội dung.",
+  "builder_prompt": "Tạo một landing page hiện đại, chuyên nghiệp với phong cách thiết kế tối giản, sạch sẽ và tập trung vào trải nghiệm người dùng. Bố cục tổng thể nên tuân theo một cấu trúc landing page tiêu chuẩn với các section rõ ràng: Header, Hero, Giới thiệu, Dịch vụ, Kêu gọi hành động (CTA) và Liên hệ, Footer. Màu sắc chủ đạo nên là gam màu trung tính kết hợp với một màu nhấn nổi bật (ví dụ: xanh dương hoặc xanh lá cây) để tạo điểm nhấn chuyên nghiệp. Các thành phần như hero section cần có ảnh nền lớn, các card dịch vụ nên được trình bày theo dạng lưới gọn gàng. Yêu cầu responsive để hiển thị tốt trên mọi thiết bị, đặc biệt là di động. Các vị trí ảnh cần được thay thế bằng các placeholder A1, A2, A3, A4, A5 như mô tả trong HTML.",
+  "source_prompt": ": Isocus | web công ty công nghệ nông nghiệp số | truy xuất OCOP Bạn cần tư vấn về linhx vực gì|0971504495/",
+  "source_mode": "image",
+  "image_count": 1,
+  "repo_owner": "hmhung2202-hue",
+  "repo_name": "omfarm-web-auto",
+  "branch": "main",
+  "public_domain": "omfarmbot.com",
+  "base_path": "sites/trang-chu-doanh-nghiep-cua-ban-20260329111154-960",
+  "html_path": "sites/trang-chu-doanh-nghiep-cua-ban-20260329111154-960/index.html",
+  "meta_path": "sites/trang-chu-doanh-nghiep-cua-ban-20260329111154-960/content/site.json",
+  "admin_data_path": "content/sites/trang-chu-doanh-nghiep-cua-ban-20260329111154-960.json",
+  "site_url": "https://omfarmbot.com/sites/trang-chu-doanh-nghiep-cua-ban-20260329111154-960/",
+  "github_pages_url": "https://hmhung2202-hue.github.io/omfarm-web-auto/sites/trang-chu-doanh-nghiep-cua-ban-20260329111154-960/",
+  "admin_url": "https://omfarmbot.com/admin/",
+  "chat_id": "1962488728",
+  "message_id": "960",
+  "created_at_utc": "2026-03-29T11:11:54.990Z",
+  "updated_at_utc": "2026-03-29T11:11:54.990Z",
+  "image_slots": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5"
+  ]
+}
