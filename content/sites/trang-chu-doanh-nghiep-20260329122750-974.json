@@ -1,0 +1,67 @@
+{
+  "site_name": "Trang Chủ Doanh Nghiệp",
+  "slug": "trang-chu-doanh-nghiep-20260329122750-974",
+  "title": "Trang Chủ Doanh Nghiệp",
+  "summary": "Trang landing page mẫu với thiết kế hiện đại, chuyên nghiệp, bao gồm các phần giới thiệu, dịch vụ và liên hệ, có sẵn các placeholder ảnh và trường chỉnh sửa nội dung.",
+  "company": {
+    "name": "Trang Chủ Doanh Nghiệp",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Trang Chủ Doanh Nghiệp",
+    "subtitle": "Trang landing page mẫu với thiết kế hiện đại, chuyên nghiệp, bao gồm các phần giới thiệu, dịch vụ và liên hệ, có sẵn các placeholder ảnh và trường chỉnh sửa nội dung.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Trang landing page mẫu với thiết kế hiện đại, chuyên nghiệp, bao gồm các phần giới thiệu, dịch vụ và liên hệ, có sẵn các placeholder ảnh và trường chỉnh sửa nội dung.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    }
+  ]
+}
