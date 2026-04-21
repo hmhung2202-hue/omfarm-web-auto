@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-edit="page_title">Isocus - Công nghệ Nông nghiệp Số & Truy xuất OCOP</title>
+    <style>
+        :root {
+            --primary-green: #28a745;
+            --dark-green: #218838;
+            --primary-blue: #007bff;
+            --dark-blue: #0056b3;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #343a40;
+            --white: #ffffff;
+            --text-color: #495057;
+            --heading-color: #343a40;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--white);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--medium-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: var(--heading-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('') center/cover no-repeat;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: var(--hero-bg-image, none); /* Placeholder for JS injection or dynamic CSS */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-green);
+        }
+
+        /* Sections General */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--heading-color);
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text,
+        .about-image {
+            flex: 1 1 45%;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--heading-color);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .placeholder-image {
+            background-color: var(--medium-gray);
+            color: var(--dark-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            text-align: center;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .placeholder-image span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #6c757d;
+        }
+
+        .placeholder-image strong {
+            font-size: 2em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-card .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .feature-item .icon {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+        }
+
+        .feature-item h3 {
+            font-size: 1.4rem;
+            color: var(--heading-color);
+            margin-bottom: 10px;
+        }
+
+        /* OCOP Solution Section */
+        .ocop-solution-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .ocop-text,
+        .ocop-image {
+            flex: 1 1 45%;
+            min-width: 300px;
+        }
+
+        .ocop-text h2 {
+            font-size: 2rem;
+            color: var(--heading-color);
+            margin-bottom: 20px;
+        }
+
+        .ocop-text p {
+            margin-bottom: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light-gray);
+            color: var(--dark-blue);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info,
+        .contact-form {
+            flex: 1 1 45%;
+            min-width: 300px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            padding: 12px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background-color: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: var(--dark-green);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer .footer-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer p {
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+
+            .about-content, .ocop-solution-content, .contact-content {
+                flex-direction: column;
+            }
+
+            .about-text, .about-image, .ocop-text, .ocop-image, .contact-info, .contact-form {
+                flex: 1 1 100%;
+                min-width: unset;
+            }
+
+            .placeholder-image {
+                height: 250px;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section p {
+                font-size: 1rem;
+            }
+
+            .services-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo" data-edit="company_name">Isocus</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#hero">Trang chủ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#services">Dịch vụ</a></li>
+                    <li><a href="#ocop-solution">Giải pháp OCOP</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 data-edit="hero_title">Isocus: Tiên Phong Công Nghệ Nông Nghiệp Số & Truy Xuất Nguồn Gốc OCOP</h1>
+            <p data-edit="hero_subtitle">Nâng tầm nông sản Việt, kiến tạo giá trị bền vững</p>
+            <a href="#contact" class="btn-primary" data-edit="hero_cta_text">Liên hệ tư vấn ngay</a>
+        </div>
+        <div id="img-A1" class="placeholder-image" data-image-slot="A1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+            <strong>A1</strong><span>Ảnh nền hero (Cảnh quan nông nghiệp hiện đại)</span>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="about_section_title">Về Chúng Tôi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 data-edit="about_heading">Isocus - Kiến Tạo Tương Lai Nông Nghiệp</h2>
+                    <p data-edit="about_text_1">Isocus là công ty công nghệ nông nghiệp số hàng đầu, chuyên cung cấp các giải pháp tiên tiến giúp tối ưu hóa quy trình sản xuất, nâng cao chất lượng nông sản và quản lý hiệu quả chuỗi cung ứng. Chúng tôi tin rằng công nghệ là chìa khóa để khai mở tiềm năng của nền nông nghiệp Việt Nam.</p>
+                    <p data-edit="about_text_2">Với đội ngũ chuyên gia giàu kinh nghiệm và sự am hiểu sâu sắc về nông nghiệp, chúng tôi cam kết mang đến những giải pháp sáng tạo, bền vững, đặc biệt trong lĩnh vực truy xuất nguồn gốc sản phẩm OCOP, góp phần xây dựng thương hiệu và niềm tin cho nông sản Việt trên thị trường quốc tế.</p>
+                </div>
+                <div class="about-image">
+                    <div id="img-A2" class="placeholder-image" data-image-slot="A2">
+                        <strong>A2</strong><span>Ảnh giới thiệu công ty (Đội ngũ làm việc)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="services_section_title">Dịch Vụ Của Chúng Tôi</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div id="img-A3" class="icon-wrapper placeholder-image" data-image-slot="A3">
+                        <strong>A3</strong><span>Icon OCOP</span>
+                    </div>
+                    <h3 data-edit="service_1_title">Giải pháp Truy xuất nguồn gốc OCOP</h3>
+                    <p data-edit="service_1_desc">Cung cấp hệ thống truy xuất nguồn gốc minh bạch, chính xác cho sản phẩm OCOP, đảm bảo chất lượng và uy tín, tăng cường niềm tin từ người tiêu dùng.</p>
+                </div>
+                <div class="service-card">
+                    <div id="img-A4" class="icon-wrapper placeholder-image" data-image-slot="A4">
+                        <strong>A4</strong><span>Icon Smart Farm</span>
+                    </div>
+                    <h3 data-edit="service_2_title">Nền tảng Quản lý Nông trại thông minh</h3>
+                    <p data-edit="service_2_desc">Ứng dụng IoT và AI vào quản lý nông trại, giúp giám sát môi trường, tối ưu hóa tưới tiêu, bón phân và dự báo sâu bệnh hiệu quả.</p>
+                </div>
+                <div class="service-card">
+                    <div id="img-A5" class="icon-wrapper placeholder-image" data-image-slot="A5">
+                        <strong>A5</strong><span>Icon Consulting</span>
+                    </div>
+                    <h3 data-edit="service_3_title">Tư vấn Chuyển đổi số Nông nghiệp</h3>
+                    <p data-edit="service_3_desc">Đồng hành cùng doanh nghiệp nông nghiệp trong lộ trình chuyển đổi số, từ xây dựng chiến lược đến triển khai các ứng dụng công nghệ.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="features_section_title">Tại Sao Chọn Isocus?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon">&#128187;</div> <!-- Computer icon -->
+                    <h3 data-edit="feature_1_title">Công nghệ hiện đại</h3>
+                    <p data-edit="feature_1_desc">Ứng dụng những công nghệ tiên tiến nhất như IoT, AI, Blockchain.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">&#128100;</div> <!-- User icon -->
+                    <h3 data-edit="feature_2_title">Chuyên gia giàu kinh nghiệm</h3>
+                    <p data-edit="feature_2_desc">Đội ngũ kỹ sư và chuyên gia nông nghiệp hàng đầu.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">&#128172;</div> <!-- Chat bubble icon -->
+                    <h3 data-edit="feature_3_title">Hỗ trợ tận tâm 24/7</h3>
+                    <p data-edit="feature_3_desc">Luôn sẵn sàng hỗ trợ khách hàng mọi lúc, mọi nơi.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">&#127793;</div> <!-- Plant icon -->
+                    <h3 data-edit="feature_4_title">Giải pháp bền vững</h3>
+                    <p data-edit="feature_4_desc">Góp phần xây dựng một nền nông nghiệp xanh, bền vững.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ocop-solution" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="ocop_solution_section_title">Giải pháp Truy xuất nguồn gốc OCOP toàn diện</h2>
+            <div class="ocop-solution-content">
+                <div class="ocop-image">
+                    <div id="img-A6" class="placeholder-image" data-image-slot="A6">
+                        <strong>A6</strong><span>Ảnh minh họa giải pháp truy xuất OCOP</span>
+                    </div>
+                </div>
+                <div class="ocop-text">
+                    <h2 data-edit="ocop_solution_heading">Nâng cao giá trị và uy tín sản phẩm OCOP</h2>
+                    <p data-edit="ocop_solution_text_1">Hệ thống truy xuất nguồn gốc của Isocus được thiết kế đặc biệt cho các sản phẩm OCOP, giúp ghi lại toàn bộ thông tin từ quá trình trồng trọt, chăm sóc, thu hoạch, chế biến đến phân phối. Mỗi sản phẩm sẽ có một mã QR riêng biệt, cho phép người tiêu dùng dễ dàng kiểm tra nguồn gốc, chất lượng và chứng nhận OCOP.</p>
+                    <p data-edit="ocop_solution_text_2">Giải pháp này không chỉ tăng cường minh bạch, tạo dựng niềm tin cho khách hàng mà còn hỗ trợ doanh nghiệp quản lý chất lượng nội bộ, tối ưu hóa chuỗi cung ứng và nâng tầm thương hiệu sản phẩm OCOP trên thị trường trong nước và quốc tế.</p>
+                    <p data-edit="ocop_solution_text_3">Chúng tôi cung cấp giải pháp toàn diện bao gồm: phần mềm quản lý, thiết bị in ấn mã QR, đào tạo sử dụng và hỗ trợ kỹ thuật liên tục.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-edit="cta_heading">Bạn cần tư vấn về lĩnh vực gì?</h2>
+            <p data-edit="cta_subtitle">Đừng ngần ngại liên hệ Isocus để nhận được sự hỗ trợ chuyên nghiệp nhất.</p>
+            <a href="#contact" class="btn-secondary" data-edit="cta_button_text">Gửi yêu cầu tư vấn ngay</a>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="contact_section_title">Liên Hệ Với Chúng Tôi</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p data-edit="contact_address"><strong>Địa chỉ:</strong> Trụ sở chính: Hà Nội, Việt Nam</p>
+                    <p data-edit="contact_phone"><strong>Hotline:</strong> <a href="tel:0971504495">0971504495</a></p>
+                    <p data-edit="contact_email"><strong>Email:</strong> <a href="mailto:info@isocus.vn">info@isocus.vn</a></p>
+                    <p data-edit="contact_hours"><strong>Giờ làm việc:</strong> Thứ Hai - Thứ Sáu, 8:00 - 17:30</p>
+                    <div id="img-A7" class="placeholder-image" data-image-slot="A7" style="margin-top: 20px; height: 200px;">
+                        <strong>A7</strong><span>Ảnh liên hệ (Hỗ trợ khách hàng)</span>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3 data-edit="contact_form_heading">Gửi yêu cầu cho chúng tôi</h3>
+                    <form action="#">
+                        <input type="text" placeholder="Họ và tên" data-edit="form_name_placeholder" required>
+                        <input type="email" placeholder="Email của bạn" data-edit="form_email_placeholder" required>
+                        <input type="text" placeholder="Số điện thoại" data-edit="form_phone_placeholder">
+                        <textarea placeholder="Nội dung bạn muốn tư vấn..." data-edit="form_message_placeholder" required></textarea>
+                        <button type="submit" data-edit="form_submit_button">Gửi yêu cầu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#hero">Trang chủ</a>
+                <a href="#about">Giới thiệu</a>
+                <a href="#services">Dịch vụ</a>
+                <a href="#contact">Liên hệ</a>
+            </div>
+            <p data-edit="footer_copyright">&copy; 2023 <span data-edit="company_name">Isocus</span>. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <!-- IMAGE SLOT MAP START -->
+A1 - Ảnh nền hero (Cảnh quan nông nghiệp hiện đại, công nghệ cao)
+A2 - Ảnh giới thiệu công ty (Đội ngũ làm việc, văn phòng hiện đại hoặc hình ảnh sản phẩm nông nghiệp áp dụng công nghệ)
+A3 - Biểu tượng/ảnh cho dịch vụ "Giải pháp truy xuất nguồn gốc OCOP"
+A4 - Biểu tượng/ảnh cho dịch vụ "Nền tảng quản lý nông trại thông minh"
+A5 - Biểu tượng/ảnh cho dịch vụ "Tư vấn chuyển đổi số nông nghiệp"
+A6 - Ảnh minh họa cho giải pháp truy xuất OCOP (Ví dụ: Một sản phẩm OCOP có mã QR, màn hình app truy xuất)
+A7 - Ảnh liên hệ (Ví dụ: Biểu tượng hỗ trợ khách hàng, tư vấn viên)
+    <!-- IMAGE SLOT MAP END -->
+
+</body>
+</html>
