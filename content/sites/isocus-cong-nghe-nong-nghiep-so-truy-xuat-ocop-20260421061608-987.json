@@ -1,0 +1,72 @@
+{
+  "site_name": "Isocus - Công nghệ Nông nghiệp Số & Truy xuất OCOP",
+  "slug": "isocus-cong-nghe-nong-nghiep-so-truy-xuat-ocop-20260421061608-987",
+  "title": "Isocus - Công nghệ Nông nghiệp Số & Truy xuất OCOP",
+  "summary": "Landing page giới thiệu công ty Isocus chuyên cung cấp giải pháp công nghệ nông nghiệp số và hệ thống truy xuất nguồn gốc OCOP, với thông tin liên hệ.",
+  "company": {
+    "name": "Isocus - Công nghệ Nông nghiệp Số & Truy xuất OCOP",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Isocus - Công nghệ Nông nghiệp Số & Truy xuất OCOP",
+    "subtitle": "Landing page giới thiệu công ty Isocus chuyên cung cấp giải pháp công nghệ nông nghiệp số và hệ thống truy xuất nguồn gốc OCOP, với thông tin liên hệ.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Landing page giới thiệu công ty Isocus chuyên cung cấp giải pháp công nghệ nông nghiệp số và hệ thống truy xuất nguồn gốc OCOP, với thông tin liên hệ.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": "",
+    "A7": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A7",
+      "value": ""
+    }
+  ]
+}
