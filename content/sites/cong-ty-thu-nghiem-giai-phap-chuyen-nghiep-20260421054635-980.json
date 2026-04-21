@@ -1,0 +1,67 @@
+{
+  "site_name": "Công ty Thử Nghiệm - Giải pháp chuyên nghiệp",
+  "slug": "cong-ty-thu-nghiem-giai-phap-chuyen-nghiep-20260421054635-980",
+  "title": "Công ty Thử Nghiệm - Giải pháp chuyên nghiệp",
+  "summary": "Trang landing page mẫu cho một công ty cung cấp đa dịch vụ, giới thiệu về doanh nghiệp, các dịch vụ nổi bật và thông tin liên hệ, sử dụng các placeholder ảnh.",
+  "company": {
+    "name": "Công ty Thử Nghiệm - Giải pháp chuyên nghiệp",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Công ty Thử Nghiệm - Giải pháp chuyên nghiệp",
+    "subtitle": "Trang landing page mẫu cho một công ty cung cấp đa dịch vụ, giới thiệu về doanh nghiệp, các dịch vụ nổi bật và thông tin liên hệ, sử dụng các placeholder ảnh.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Trang landing page mẫu cho một công ty cung cấp đa dịch vụ, giới thiệu về doanh nghiệp, các dịch vụ nổi bật và thông tin liên hệ, sử dụng các placeholder ảnh.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    }
+  ]
+}
