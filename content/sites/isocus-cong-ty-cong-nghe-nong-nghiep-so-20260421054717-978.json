@@ -1,0 +1,87 @@
+{
+  "site_name": "Isocus - Công ty Công nghệ Nông nghiệp Số",
+  "slug": "isocus-cong-ty-cong-nghe-nong-nghiep-so-20260421054717-978",
+  "title": "Isocus - Công ty Công nghệ Nông nghiệp Số",
+  "summary": "Landing page giới thiệu công ty Isocus chuyên về công nghệ nông nghiệp số và giải pháp truy xuất nguồn gốc OCOP, với giao diện hiện đại, chuyên nghiệp, responsive.",
+  "company": {
+    "name": "Isocus - Công ty Công nghệ Nông nghiệp Số",
+    "slogan": "",
+    "hotline": "",
+    "email": "",
+    "address": ""
+  },
+  "hero": {
+    "title": "Isocus - Công ty Công nghệ Nông nghiệp Số",
+    "subtitle": "Landing page giới thiệu công ty Isocus chuyên về công nghệ nông nghiệp số và giải pháp truy xuất nguồn gốc OCOP, với giao diện hiện đại, chuyên nghiệp, responsive.",
+    "cta_text": "Liên hệ ngay",
+    "cta_link": "",
+    "A1": ""
+  },
+  "about": {
+    "title": "Giới thiệu",
+    "text": "Landing page giới thiệu công ty Isocus chuyên về công nghệ nông nghiệp số và giải pháp truy xuất nguồn gốc OCOP, với giao diện hiện đại, chuyên nghiệp, responsive.",
+    "A2": ""
+  },
+  "services": [],
+  "gallery": {
+    "A1": "",
+    "A2": "",
+    "A3": "",
+    "A4": "",
+    "A5": "",
+    "A6": "",
+    "A7": "",
+    "A8": "",
+    "A9": "",
+    "A10": ""
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "text": "",
+    "phone": "",
+    "zalo": "",
+    "facebook": ""
+  },
+  "image_slots": [
+    {
+      "image_slot_id": "A1",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A2",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A3",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A4",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A5",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A6",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A7",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A8",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A9",
+      "value": ""
+    },
+    {
+      "image_slot_id": "A10",
+      "value": ""
+    }
+  ]
+}
