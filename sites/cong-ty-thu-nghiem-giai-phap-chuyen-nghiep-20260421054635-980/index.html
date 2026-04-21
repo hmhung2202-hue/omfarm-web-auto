@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-edit="page_title">Công ty Thử Nghiệm - Giải pháp chuyên nghiệp</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #343a40;
+            --light-grey: #e9ecef;
+            --white: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        header {
+            background-color: var(--white);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light-grey);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 25px;
+        }
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            background: var(--light-grey);
+            color: var(--text-color);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7));
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .hero .btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .hero .btn:hover {
+            background-color: #004085;
+        }
+
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .section:nth-of-type(even) {
+            background-color: var(--secondary-color);
+        }
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            text-align: left;
+            gap: 30px;
+        }
+        .about-text, .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .service-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .service-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            font-size: 1em;
+            color: var(--text-color);
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        .contact-map {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-grey);
+            border-radius: 8px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #6c757d;
+            overflow: hidden;
+        }
+
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .footer-links a {
+            color: var(--white);
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.5em;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Placeholder Styling */
+        .image-placeholder {
+            background-color: var(--light-grey);
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1em;
+            font-weight: bold;
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .image-placeholder span {
+            padding: 10px;
+            line-height: 1.4;
+        }
+        .hero .image-placeholder {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            border: none;
+            border-radius: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: brightness(0.8);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links li {
+                margin: 0 10px 10px 10px;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .section-title {
+                font-size: 2em;
+            }
+            .about-content, .contact-content {
+                flex-direction: column;
+            }
+            .contact-info, .contact-map {
+                min-width: unset;
+                width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 0.9em;
+            }
+            .section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo" data-edit="company_name">Công ty Thử Nghiệm</a>
+                <ul class="nav-links">
+                    <li><a href="#hero" data-edit="nav_home">Trang chủ</a></li>
+                    <li><a href="#about" data-edit="nav_about">Giới thiệu</a></li>
+                    <li><a href="#services" data-edit="nav_services">Dịch vụ</a></li>
+                    <li><a href="#contact" data-edit="nav_contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="image-placeholder" id="img-A1" data-image-slot="A1" style="height: 100%; background-image: url('https://via.placeholder.com/1920x1080/E9ECEF/6C757D?text=Anh+nen+Hero+A1');"></div>
+        <div class="hero-content">
+            <h1 data-edit="hero_title">Giải pháp Đổi mới cho Doanh nghiệp của bạn</h1>
+            <p data-edit="hero_subtitle">Chúng tôi cung cấp các dịch vụ chuyên nghiệp giúp doanh nghiệp phát triển bền vững và đạt được mục tiêu.</p>
+            <a href="#contact" class="btn" data-edit="hero_cta_button">Liên hệ ngay</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="about_section_title">Về Chúng Tôi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-edit="about_text_paragraph_1">Công ty Thử Nghiệm là đơn vị tiên phong trong việc cung cấp các giải pháp công nghệ và dịch vụ tư vấn toàn diện. Với nhiều năm kinh nghiệm, chúng tôi tự hào mang đến những giá trị thực sự cho khách hàng, giúp họ tối ưu hóa hoạt động và nâng cao năng lực cạnh tranh.</p>
+                    <p data-edit="about_text_paragraph_2">Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng lắng nghe và thấu hiểu nhu cầu của từng doanh nghiệp, từ đó đưa ra các chiến lược phù hợp và triển khai hiệu quả. Chúng tôi cam kết đồng hành cùng bạn trên mọi chặng đường phát triển.</p>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder" id="img-A2" data-image-slot="A2" style="width: 100%; height: 300px;"><span>Ảnh cần cập nhật (A2)<br>Giới thiệu Công ty</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="services_section_title">Dịch vụ của Chúng Tôi</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="image-placeholder" id="img-A3" data-image-slot="A3" style="width: 80px; height: 80px; margin: 0 auto 20px auto; border-radius: 50%;"><span>A3</span></div>
+                    <h3 data-edit="service_1_title">Tư vấn Chiến lược</h3>
+                    <p data-edit="service_1_description">Cung cấp các giải pháp tư vấn chuyên sâu, giúp doanh nghiệp định hình chiến lược phát triển dài hạn.</p>
+                </div>
+                <div class="service-card">
+                    <div class="image-placeholder" id="img-A4" data-image-slot="A4" style="width: 80px; height: 80px; margin: 0 auto 20px auto; border-radius: 50%;"><span>A4</span></div>
+                    <h3 data-edit="service_2_title">Phát triển Phần mềm</h3>
+                    <p data-edit="service_2_description">Thiết kế và phát triển các ứng dụng phần mềm tùy chỉnh, đáp ứng mọi nhu cầu đặc thù.</p>
+                </div>
+                <div class="service-card">
+                    <div class="image-placeholder" id="img-A5" data-image-slot="A5" style="width: 80px; height: 80px; margin: 0 auto 20px auto; border-radius: 50%;"><span>A5</span></div>
+                    <h3 data-edit="service_3_title">Quảng cáo Digital</h3>
+                    <p data-edit="service_3_description">Triển khai các chiến dịch marketing số hiệu quả, tăng cường nhận diện thương hiệu và doanh số.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-edit="contact_section_title">Liên Hệ Chúng Tôi</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p data-edit="contact_address"><i class="fas fa-map-marker-alt"></i>Địa chỉ: Số 123, Đường Thử Nghiệm, Quận Test, TP. HCM</p>
+                    <p data-edit="contact_phone"><i class="fas fa-phone"></i>Điện thoại: <a href="tel:+84901234567">+84 901 234 567</a></p>
+                    <p data-edit="contact_email"><i class="fas fa-envelope"></i>Email: <a href="mailto:info@congtythunghiem.com">info@congtythunghiem.com</a></p>
+                    <p data-edit="contact_hours"><i class="fas fa-clock"></i>Giờ làm việc: Thứ Hai - Thứ Sáu, 9:00 - 17:00</p>
+                </div>
+                <div class="contact-map">
+                    <div class="image-placeholder" id="img-A6" data-image-slot="A6" style="width: 100%; height: 100%; border: none; border-radius: 0;"><span>Ảnh cần cập nhật (A6)<br>Bản đồ vị trí</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-edit="footer_copyright">&copy; 2023 <span data-edit="company_name_footer">Công ty Thử Nghiệm</span>. Mọi quyền được bảo lưu.</p>
+            <div class="footer-links">
+                <a href="#" data-edit="footer_privacy">Chính sách bảo mật</a> |
+                <a href="#" data-edit="footer_terms">Điều khoản dịch vụ</a>
+            </div>
+            <div class="social-icons" style="margin-top: 15px;">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- IMAGE SLOT MAP START -->
+A1 - Ảnh nền chính của phần Hero (kích thước lớn)
+A2 - Ảnh minh họa cho phần Giới thiệu công ty
+A3 - Ảnh/Icon minh họa cho Dịch vụ 1 (Tư vấn Chiến lược)
+A4 - Ảnh/Icon minh họa cho Dịch vụ 2 (Phát triển Phần mềm)
+A5 - Ảnh/Icon minh họa cho Dịch vụ 3 (Quảng cáo Digital)
+A6 - Ảnh vị trí trên bản đồ cho phần Liên hệ
+<!-- IMAGE SLOT MAP END -->
+</body>
+</html>
